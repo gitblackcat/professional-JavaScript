@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		function foo(){
+			alert('</script>');
+		}
+
+
+		<!-- 在嵌入式js中，不能在代码任何地方出现"</script>"字符串，否则浏览器会提前结束js代码 -->
+		<!-- 解决方式：
+			function foo(){
+				alert('<\/script>');
+			}
+			通过反斜杠对斜杠进行转义
+		 -->
+	</script>
+
+</body>
+</html>

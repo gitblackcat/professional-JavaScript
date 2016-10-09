@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// label: statement
+
+		var num1 = 0;
+		for(var i=0;i<10;i++){
+			for(var j=0;j<10;j++){
+				if( i === 5 && j === 5 ){
+					break;
+				}
+				num1++;
+			}
+		}
+		alert(num1);//95
+
+		var num2 = 0;
+		
+		test: 
+		for(var m=0;m<10;m++){
+			for(var n=0;n<10;n++){
+				if( m === 5 && n === 5 ){
+					break test;
+				}
+				num2++;
+			}
+		}
+		alert(num2);//55
+	</script>
+
+</body>
+</html>

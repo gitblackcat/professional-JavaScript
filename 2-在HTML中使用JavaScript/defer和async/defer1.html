@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 300px;
+			background-color: red;
+		}
+	</style>
+	<script type="text/javascript" defer src="defer1.js"></script>
+	<!-- 在没有defer的延迟脚本的时候，js是报错的 因为按照顺序 要先加载js 然后执行js 然后再加载body里面的内容，这样导致js中获取不到body中的元素
+	但通过defer 浏览器异步加载了js和html 并且在html加载完成后 对js进行了执行，所以js能顺利且成功的执行 -->
+</head>
+<body>
+	<div></div>
+</body>
+</html>

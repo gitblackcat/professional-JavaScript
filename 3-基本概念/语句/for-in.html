@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		/*
+			for( property in expression ){
+				statement
+			}
+			ECMAScript对象的属性没有顺序，因此通过for-in循环输出的属性名的顺序是不可预测的。
+			具体来讲，所有属性都会被返回一次，但返回的先后次序可能因浏览器而异
+			如果迭代的对象的变量值是null或者undefined，ES5中for-in不执行循环体
+		*/
+
+		for(var p in window){
+			document.write(p + ' ');
+		}
+	</script>
+
+</body>
+</html>

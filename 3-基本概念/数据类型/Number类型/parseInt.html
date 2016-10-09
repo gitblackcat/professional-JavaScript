@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+
+		console.log( parseInt('  123') ); //123
+		console.log( parseInt('  0123') ); //123
+		console.log( parseInt('0325') ); //325
+		console.log( parseInt('41aaa') ); //41
+		console.log( parseInt('aa45') ); //NaN
+		console.log( parseInt('') ); //NaN
+		console.log( parseInt('50') ); //50
+		console.log( parseInt('13.8') ); //13
+		console.log( parseInt('0xf') ); //15
+
+		// parseInt()在解析八进制字面量时，ECMAScript3与5存在分歧
+		// ECMAScript3中parseInt(070)解析成56
+		// ECMAScript5不具有自动解析八进制的能力
+		// 解决方法
+		console.log( parseInt('0xaf',16) ); //175
+		console.log( parseInt('af',16) ); //175 (加了第二个参数，0x可以不加)
+		console.log( parseInt('af') ); //NaN
+		console.log( parseInt('10',2) ); //2 (按二进制解析)
+		console.log( parseInt('10',8) ); //8 (按八进制解析)
+		console.log( parseInt('10',10) ); //10 (按十进制解析)
+		console.log( parseInt('10',16) ); //16 (按十六进制解析)
+
+		// 所以为了防止这种ECMAScript的版本不同引起的parseInt()解析错误
+		// 推荐都加上第二个进制参数
+
+	</script>
+
+</body>
+</html>

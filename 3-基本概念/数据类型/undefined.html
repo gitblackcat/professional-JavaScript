@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		
+		/*
+		var message;
+		alert( message );//undefined
+		alert( age );//报错
+		age为未申明变量
+		*/
+
+		var message;
+		console.log( typeof message );//undefined
+		console.log( typeof age );//undefined
+
+		// 即便未初始化的变量会自动被赋予undefined值，但显式的申明初始化变量依然是明智的选择。比如var message = '';等
+		// 如果能够做到显式初始化变量，那么当使用typeof操作符返回undefined的时候，我们就能知道检测的变量是尚未申明的，而不是尚未初始化的
+
+	</script>
+
+</body>
+</html>

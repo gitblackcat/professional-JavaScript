@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		/*
+			switch(expression){
+				case value :
+					statement;
+					break;
+				case value :
+					statement;
+					break;
+				case value :
+					statement;
+					break;
+				case value :
+					statement;
+					break;
+				default:
+					statement;	
+			}
+		*/
+
+		var i = 25;
+		switch(i){
+			case 25:
+			case 35:
+				alert( '25 or 35' );
+				break;
+			case 45:
+				alert('45');
+				break;
+			case 55:
+				alert('55');
+				break;
+			default:
+				alert('other');
+		}
+
+		// 可以在switch语句中使用任何数据类型 无论是字符串还是对象等
+		switch ("hello world") {
+		    case "hello" + " world": 
+		        alert("Greeting was found.");
+		        break;
+		    case "goodbye": 
+		        alert("Closing was found.");
+		        break;
+		    default: 
+		        alert("Unexpected message was found.");
+		}
+
+		// case的值不一定是常量 还可以是变量或者表达式
+		// switch语句在比较值的时候，使用的是全等操作符，因此不会发生类型转换
+		var num = 25;
+		switch (true) {
+		    case num < 0: 
+		        alert("Less than 0.");
+		        break;
+		    case num >= 0 && num <= 10: 
+		        alert("Between 0 and 10.");
+		        break;
+		    case num > 10 && num <= 20: 
+		        alert("Between 10 and 20.");
+		        break;
+		    default: 
+		        alert("More than 20.");
+		}
+	</script>
+
+</body>
+</html>

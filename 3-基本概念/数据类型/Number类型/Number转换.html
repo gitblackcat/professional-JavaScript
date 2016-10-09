@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		
+		// Number()可以用于任何数据类型的转换
+		/*
+		后置的一元单调操作符能跟number()达到一样的效果
+		var num = '123';
+		console.log( num++ );//123
+		console.log( num-- );//123
+		前置的一元加操作符跟number()达到一样的效果
+		var num = '123';
+		console.log( +num );//123
+		*/
+
+		/*规则：
+			1.Boolean  true: 1   false: 0
+			2.Number   只是简单的传入和返回
+			3.Null    0
+			4.undefined  NaN
+			5.String  
+				a.如果只是数字(包括前面带正号或负号的情况) 则转为十进制数值 '1': 1   '123': 123  '-123': -123  '0123': 123  '-0123': -123  'lala-0123': NaN
+				b.如果字符串是有效浮点格式(包括前面带正号或负号的情况) 转成对应浮点数 '1.1': 1.1   '01.1': 1.1  '-01.2': -1.2  'lala1.2': NaN
+				c.字符串为十六进制格式 '0xf': 15  '-0xf': NaN  'lala0xf': NaN
+				d.字符串为空  0
+				e.除了上述条例外 其他字符串皆为NaN
+			6.对象，调用对象的valueOf()方法，然后依照前面的规则 转换返回的值。如果转换的值是NaN，则调用对象toString()方法，然后依照前面的规则 转换返回的字符串值
+		*/
+
+
+	</script>
+
+</body>
+</html>

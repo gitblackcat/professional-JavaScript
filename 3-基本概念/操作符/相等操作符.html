@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// 相等(==)和不相等(!=)(先转换再比较)  全等(===)和不全等(!==)(仅比较不转换)
+		// 在一般情况下 能用全等操作符 就不要用相等操作符 为了保持代码中数据类型的完整性
+
+		/*相等 不相等
+		1.如果一个操作数是布尔值，先将其转为数值再比较
+			console.log( true == 1 );//true
+			console.log( true == '1' );//true
+		2.如果一个操作数是字符长，另一个操作数是数值，先将字符串转为数值再比较 console.log( '10' != 10 );//true
+		3.如果一个操作数是对象，另一个操作数不是，则调用valueOf()方法，用得到的基本类型值再按上述规则比较
+		*/
+
+		/*关于null/undefined比较的规则
+		1.null和undefined是相等的
+		2.要比较相等性之前，不能将null或者undefined转换成其他任何值
+		3.如果一个操作数是NaN 则相等操作符返回false 不等操作符返回true
+		4.如果两个操作数都是对象，则比较它们是不是同一个对象，如果两个操作数指向同一对象，返回true 否则返回false
+		*/
+
+
+	</script>
+
+</body>
+</html>

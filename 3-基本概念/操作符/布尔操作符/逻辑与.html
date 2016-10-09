@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		var a = true;
+		var b = {
+			"name": "yzd"
+		}
+		var c = {
+			"age": 50
+		}
+		var d = null;
+		var e = undefined;
+		var f = NaN;
+		var g = function(){
+			alert(123);
+		}
+		var h = a && g();
+		// 如果a为true 那么g函数执行
+
+		/*逻辑与是短路操作符
+		1.如果第一个操作数为对象，则返回第二个操作数
+		2.如果第二个操作数是对象，则只有在第一个操作数为true的情况下，才会返回该对象
+		3.如果两个操作数都是对象，则返回第二个操作数
+		4.如果一个操作数是null，返回null
+		4.如果一个操作数是undefined，返回undefined
+		4.如果一个操作数是NaN，返回NaN
+		*/
+
+		var found = true;
+		var result = found && someUndefinedVariable;
+		console.log( result );
+		// 报错 逻辑与操作符不能对未申明的值进行操作
+	</script>
+
+</body>
+</html>

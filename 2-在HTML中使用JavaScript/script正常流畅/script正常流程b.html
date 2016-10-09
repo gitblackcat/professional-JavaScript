@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="box"></div>
+	<script type="text/javascript" src="script正常流程b1.js"></script>
+	<script type="text/javascript" src="script正常流程b2.js"></script>
+
+	<!-- js是单进程的，所以绝对没有什么同时。这里虽然用了两个setInterval，但都是延迟20毫秒，所以，它的运行顺序是，先运行b1，保存setInterval中调用的代码，再运行b2，同样保存setInterval中调用的代码，然后运行b1保存的异步代码，最后运行b2保存的异步代码。-->
+
+	<!-- js中改变了网页结构，这并不意味着网页马上就会重新绘制。js进程和网页UI进程不会同时运行，网页绘制会发生在js进程完毕之后。  -->
+</body>
+</html>

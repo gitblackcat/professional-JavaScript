@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+
+		console.log( ++2 );
+
+		// 一元操作符不管前置还是后置对任何值都是适用的，且变量都变成数值变量
+
+		/*
+		 1.应用于一个包含有效数字字符的字符串，先将其转换为数字值,再加减1,且对十六进制也有效
+			var num1 = '123';
+			console.log( ++num1 );//124
+			var num2 = '0xa';
+			console.log( ++num2 );//11
+			注意 这里直接console.log( ++'123' );会报错 因为一元操作符只能用来操作变量   console.log( ++1 );//也会报错
+			(一元操作符是自身+1或者-1以后赋值给自己 怎么才能赋值给自己 那就只能套上变量这个外壳 如果赤裸裸的一个常量 是没办法自增或自减1以后赋值给自己的)
+		*/
+
+		/*
+		2.在应用于一个不包含有效数字字符的字符串时，将其转换为NaN
+		var num1 = 'aaa';
+		console.log( ++num1 );//NaN
+		*/
+
+		/*
+		3.在应用布尔值的时候 false转为0 再加减1  true转为1 再加减1
+		var BooleanTrue = true;
+		console.log( ++BooleanTrue );//2
+		var BooleanFalse = false;
+		console.log( ++BooleanFalse );//1
+		*/
+
+		/*
+		4.应用浮点数值时，执行加减1
+		var floatNum = 1.58;
+		console.log( ++floatNum );
+		*/
+
+		/*
+		5.应用对象时，先调用对象的valueOf()方法(详细看第五章)已取得一个可供操作的值。然后对该值应用以上4条规则。
+			如果结果是NaN，则调用toString()方法后再应用上述4条规则。
+			var o = {
+				valueOf: function(){
+					return -1;
+				}
+			};
+			console.log( ++o );//0
+		*/
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// ECMAScript中所有函数的参数都是按值传递的
+		/*
+			在向参数传递基本类型的值时候,被传递的值会被复制给一个局部变量(即命名参数,或者用ECMAScript概念来说,就是arguments对象的第一个元素)
+			在向参数传递引用类型的值时候,会把这个值在内存中的地址复制给一个局部变量,因此这个局部变量的变化会反映在函数外部
+		*/
+
+		function addTen(num){
+			num += 10;
+			return num;
+		}
+		var count = 20;
+		var result = addTen(count);
+		console.log(count);//20
+		console.log(result);//30
+		// 函数中的参数num,实际上是函数的局部变量
+		// 参数num与变量count是互不相识的,它们仅仅具有相同的值罢了
+		// 在第21行中,其实本质就是复制变量值 num = count num复制了count的值的副本
+		/*
+			函数参数按值传递就好像魔法师的复制技能.count有个打开的box,在第21行代码的时候,魔法师num复制了count的box
+			这样魔法师num也就拥有了一个和count的box一样的box,
+			再之后在函数体内,num不管怎么折腾自己的box,对count的box都不会产生影响
+		*/
+
+		function setName(obj){
+			obj.name = "Nicholas";
+			obj = new Object();
+			obj.name = "Greg";
+		}
+		var person = new Object();
+		setName(person);
+		console.log(person.name);//Nicholas
+		// 第39行,其本质就是复制变量值 obj = person 所以obj复制了person保存对象引用的地址
+		// 在34行,参数obj和变量person,是互不相识的,它们仅仅具有相同的引用地址罢了
+		// 第35行,当在函数内容重写obj时,这个变量引用的就是一个局部对象了.而这个局部对象会在函数执行完毕后立即销毁
+		/*
+			函数参数按值传递就好像魔法师的复制技能.person有一个关闭的box,以及一把打开box的key
+			第39行代码,魔法师obj复制了person的key,这样魔法师obj在第34行,用key打开了person的box,并对box内的内容做了修改
+			那么当person再次打开box的时候,box内的内容已经不一样了
+			第35行,魔法师自己拥有了一个全新的box和key,此时就会丢弃person的box的key,
+			所以第36行,魔法师obj不管对这个全新的box怎么折腾,person的box不再受到影响
+		*/
+
+
+		//不管是基本参数还是引用参数,函数内的参数和函数外的变量都是没关系的,它们只是变量值的复制,所以函数的参数只是按值传递
+	</script>
+
+</body>
+</html>

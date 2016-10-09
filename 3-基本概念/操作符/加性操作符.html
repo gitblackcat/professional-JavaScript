@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		/*加法
+		1.两个操作数都是数值，执行常规加法运算 console.log( 10 + 5 );//15
+		2.有一个操作数是NaN，结果是NaN console.log( NaN + 5 );//NaN
+		3.console.log( Infinity + Infinity );//Infinity
+		4.console.log( -Infinity + -Infinity );//-Infinity
+		5.console.log( Infinity + -Infinity );//NaN
+		6.console.log( +0 + +0 );//0
+		7.console.log( -0 + -0 );//-0
+		8.console.log( +0 + -0 );//0
+		9.如果两个操作数都是字符串 则两个操作数进行拼接 console.log( 'Hello ' + 'World!' );//'Hello World!'
+		10.如果只有一个操作数是字符串，则将另一个操作数转为字符串，再进行拼接 console.log( '你好' + 38 );//'你好38'
+		如果一个操作数是对象，数值，布尔值，则调用toString()取得相应的字符串再拼接
+		对于undefined/null 调用String() 取得字符串'undefined' 'null'
+		*/
+		
+		var n1 = 5;
+		var n2 = 10;
+		var msg = 'The sum of 5 and 10 is ' + n1 + n2;
+		console.log( msg );//The sum of 5 and 10 is 510
+		//每个加法操作符都是独立执行的
+
+		/*减法
+		1.两个操作数都是数值，执行长谷IDE算数减法操作数 console.log( 5 - 3 );//2
+		2.有一个操作数是NaN，结果是NaN console.log( NaN - 5 );//NaN
+		3.console.log( Infinity - Infinity );//NaN
+		4.console.log( -Infinity - -Infinity );//NaN
+		5.console.log( Infinity - -Infinity );//Infinity
+		6.console.log( -Infinity - Infinity );//-Infinity
+		7.console.log( +0 - +0 );//0
+		8.console.log( -0 - -0 );//0
+		9.console.log( +0 - -0 );//-0
+		10.如果有一个操作数是字符串、布尔值、null、undefined，则先在后台调用Number()函数，转为数值，然后计算。
+		如果转换结果是NaN，则减法结果是NaN
+		如果有个操作数是对象，调用对象方法valueOf()，取得表示该对象的数值。如果得到的是NaN，则减法结果就是NaN
+		如果对象没有valueOf()方法，则调用toString()方法，并将得到的字符串转为数值
+		*/
+
+		console.log( 5 - NaN );//NaN
+		console.log( 5 - true );//4
+		console.log( 5 - undefined );//NaN
+		console.log( 5 - null );//5
+		console.log( 5 - '2' );//3
+	</script>
+
+</body>
+</html>

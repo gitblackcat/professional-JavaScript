@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		var message;
+		// 这行代码定义了一个名为message的变量，该变量可以用来保存任何值(像这样未经过初始化的变量，会保存一个特殊的值————undefined)
+
+		function test(){
+			var greet = 'hi';
+		}
+		test();
+		alert(greet);
+		// 这里，变量greet是在函数中使用var定义的。当函数被调用的时候，就会创建该变量并为其赋值。而在函数退出后，变量就立即被销毁 所以导致报错
+	</script>
+
+</body>
+</html>

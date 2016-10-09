@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		/*
+		1.命名的参数是提供便利，不是必需
+			function sayHi(){
+				alert('Hello ' + arguments[0] + ',' + arguments[1]);
+			}
+			这个重写后的函数并没有命名的参数，但函数的功能依然健在
+
+		2.arguments对象可以与命名参数一起使用(arguments并不是Array的实例)
+			function doAdd(n1,n2){
+				if( arguments.length === 1 ){
+					alert( n1 + 10 );
+				}else if( arguments.length === 2 ){
+					alert( n1 + n2 );
+				}
+			}
+		*/
+
+		// 在非严格模式下，arguments的值永远与对应的命名参数的值保持同步
+		// arguments对象的长度不是由定义函数时候的命名参数个数决定的，而是由传入的参数个数决定的
+			/*
+			var num1 = 10;
+			function foo(num1,num2){
+				console.log( arguments.length );
+			}
+			foo(num1);//1 不是2
+			*/
+		// 没有传递值的命名参数会被自动赋予undefined
+
+		// 在严格模式下，对arguments设置值，对应的命名参数的值并不会改变
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// 一元减操作符主要用于表示负数
+		var s1 = '01';
+		var s2 = '1.1';
+		var s3 = 'z';
+		var b = false;
+		var f = 1.1;
+		var o = {
+			valueOf: function(){
+				return -1;
+			}
+		};
+		console.log( -s1 );//-1
+		console.log( -s2 );//-1.1
+		console.log( -s3 );//NaN
+		console.log( -b );//-0
+		console.log( -f );//-1.1
+		console.log( -o );//1
+	</script>
+
+</body>
+</html>

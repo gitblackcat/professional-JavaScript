@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// 原理：逻辑非操作符首先会将它的操作数转换为一个布尔值，然后再对其求反
+
+		/*
+		对象 返回false
+		var o = {};
+		console.log( !o );
+		*/
+
+		/*
+		空字符串 返回true
+		console.log( !'' );
+		*/
+
+		/*
+		非空字符串 返回false
+		console.log( !'lala' );
+		*/
+
+		/*
+		0 返回true
+		console.log( !0 );
+		*/
+
+		/*
+		任意非0数值包括Infinity  返回false
+		console.log( !123 );
+		console.log( !Infinity );
+		*/
+
+		/*
+		null 返回true
+		console.log( !null );
+		*/
+
+		/*
+		NaN  返回true
+		console.log( !NaN );
+		*/
+
+		/*
+		undefined  返回true
+		console.log( !undefined );
+		*/
+
+
+		// 通过两个逻辑非 能达到Boolean()方法的效果
+	</script>
+
+</body>
+</html>

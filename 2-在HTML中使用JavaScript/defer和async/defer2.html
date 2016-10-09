@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+	<script type="text/javascript" defer src="defer2-1.js"></script>
+	<script type="text/javascript" defer src="defer2-2.js"></script>
+
+	<!-- 按照HTML5规定，应该还先执行defer2-1.js 我们会看到一个高200px 宽500px的红色矩形，然后再看到弹框
+	但现在 我们却先看到了弹框 然后再看到一个高200px 宽500px的红色矩形 这表明在现实中，多个defer的js文件在html加载完成后，没有按照顺序执行 -->
+</head>
+<body>
+	<div></div>
+</body>
+</html>

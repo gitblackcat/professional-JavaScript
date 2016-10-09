@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		
+		// 浮点数就是小数
+
+		// 因为保存浮点数值需要的内存空间是保存整数的内存空间的两倍，因此ECMAScript会自动将浮点数值转成整数
+		var floatNum1 = 1.;
+		console.log( floatNum1 ); //1
+
+		var floatNum2 = 10.0;
+		console.log( floatNum2 ); //10
+
+		// 有一些极大或者极小的值 可以用e表示法(科学计数法)
+		var eNum1 =  0.0000007;
+		console.log( eNum1 );
+
+		var eNum2 = 2.364e7;
+		console.log( eNum2 );
+
+		// 浮点数值的最高精度是17位小数。但在进行算数计算时，其精度远不如整数
+		console.log( 0.1 + 0.2 ); //0.30000000000000004
+		// 原理貌似是10进制数转成2进制运算的时候 数据的丢失
+
+		if( a + b == 0.3 ){
+			alert('You got 0.3');
+		}
+		// 这里如果是0.05和0.25或者0.15和0.15是能弹出弹框的 如果是0.1和0.2那么不会
+
+		//解决浮点数运算精度问题：number.js math.js
+
+	</script>
+
+</body>
+</html>

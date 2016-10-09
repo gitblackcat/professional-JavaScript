@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		
+		// 执行前置递增或递减操作符的时候，变量的值都在语句被求值前改变的(在计算机科学领域，这种情况被称为副效应)
+		var age = 29;
+		var anotherAge = ++age + 2;
+		console.log( age );//30
+		console.log( anotherAge );//32
+
+		var num1 = 10;
+		var num2 = 5;
+		console.log( --num1 + num2 ); //14
+		console.log( num1 + num2 ); //14
+
+		var num3 = 10;
+		var num4 = 5;
+		/*
+		console.log( num3 * ++num4 ); //60
+		console.log( num3 * (++num4) ); //70
+		*/
+
+		/*
+		console.log( num3 / --num4 );//2.5
+		console.log( num3 / (--num4) );//3.33333
+		*/
+
+		var n = 5;
+		alert(++n);//6
+
+	</script>
+
+</body>
+</html>

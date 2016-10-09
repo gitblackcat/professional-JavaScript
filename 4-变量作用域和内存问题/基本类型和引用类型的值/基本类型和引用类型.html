@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// 基本类型的值指的是简单的数据段
+		// Undefined Null Number String Boolean这五种基本类型是按值访问的,因为可以操作保存在变量中的实际的值
+
+
+		// 引用类型的值指的是那些可能由多个值构成的对象
+		// 引用类型的值是保存在内存中的对象 当复制保存着对象的某个变量的时候,操作的是对象的引用.但在为对象添加属性的时候,操作的是实际对象
+		var person = new Object(); //这里复制了对象引用的指针 所用操作的是对象的引用
+		person.name = "Nicholas"; //这里为对象添加属性 操作的是实际对象
+		alert( person.name );//Nicholas
+
+		// js中不能给基本类型的值添加属性,尽管这样做不会导致任何错误
+		var name = 'Nicholas';
+		name.age = 25;
+		alert( name.age );//undefined
+
+		//以上两段代码还说明了只能给引用类型值动态添加属性
+	</script>
+
+</body>
+</html>

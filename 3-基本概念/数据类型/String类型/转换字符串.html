@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// toString()方法 
+		// 数值 布尔值 字符串值都有toStirng()方法
+		// 数值的toString()方法可以传入参数 改变进制
+		var num = 10;
+		console.log( num.toString() ); //'10'
+		console.log( num.toString(2) ); //'1010' 2的三次 + 2的一次
+		console.log( num.toString(8) ); //'12'
+		console.log( num.toString(10) ); //'10'
+		console.log( num.toString(16) ); //'a'
+
+
+		// String()方法适合任何数据类型的值转换成字符串
+		/*原理
+		1.如果值有toString()方法，则调用该方法(没有参数),并返回相应结果
+		2.如果值是null，返回'null'
+		2.如果值是undefined，返回'undefined'
+		*/
+		console.log( 10 ); //'10'
+		console.log( true ); //'true'
+		console.log( null ); //'null'
+		console.log( undefined ); //'undefined'
+		console.log( 'aaa' ); //'aaa'
+
+	</script>
+
+</body>
+</html>

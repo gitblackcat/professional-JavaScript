@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		
+		// typeof操作符是用来检测给定变量的数据类型的，并返回undefined/boolean/string/number/object/function这几种字样的字符串
+
+		var message = "some string";
+		console.log( typeof message );//string
+		console.log( typeof (typeof message) );//string
+		console.log( typeof 55 );//number
+
+		// typeof 是一个操作符而不是函数，因此例子中的圆括号尽管可以使用，但不是必需的。
+
+		// typeof null会返回object，因为特殊值null被认为是一个空的对象引用
+	</script>
+
+</body>
+</html>

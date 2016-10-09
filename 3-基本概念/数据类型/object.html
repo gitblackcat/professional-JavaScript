@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// ECMAScript中的对象其实就是一组数据和功能的集合。
+		// ECMAScript中，Object类型是所有它(Object)的实例的基础。换句话说，Object类型所具有的任何属性和方法也同样存在于更具体的对象中
+
+		//Object的每个实例都具有下列属性和方法
+		/*
+		1.constructor 保存用于创建当前对象的函数。
+		var o = new Object();
+		console.log( Object.prototype.constructor === Object );//true
+		*/
+
+		/*
+		2.hasOwnProperty(propertyName)用于检测给定的属性在当前对象实例中(而不是实例的原型中)是否存在。作为参数的属性名(propertyName)必须以字符串形式指定
+		var o = new Object();
+		console.log( o.hasOwnProperty('name') );//false
+		*/
+
+		/*
+		3.isPrototypeOf(object)用于检测传入的对象是否是当前对象的原型(第五章讨论原型)
+		*/
+
+		/*
+		4.propertyIsEnumerable(propertyName)用于检查给定的属性是否能够使用for-in语句来枚举.作为参数的属性名(propertyName)必须以字符串形式指定
+		*/
+
+		/*
+		toLocaleString()返回对象的字符串表示，该字符串与执行环境的地区对应
+		*/
+
+		/*
+		toString()返回对象的字符串表示
+		*/
+
+		/*
+		valueOf()返回对象的字符串、数值或者布尔值表示
+		*/
+	</script>
+
+</body>
+</html>

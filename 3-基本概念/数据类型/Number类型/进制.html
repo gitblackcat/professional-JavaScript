@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		
+		// 十进制
+		var num1 = 55;
+		console.log( num1 );
+
+		// 八进制 要写八进制的字面值 前面必须加0，八进制的数字序列为(0--7)
+		// 在严格模式下 八进制是无效的 会报错
+		var num2 = 070;
+		console.log( num2 );
+
+		var num3 = 079;
+		console.log( num3 );//无效八进制 打印出来79
+
+		var num4 = 08;
+		console.log( num4 );//无效八进制 打印出来8
+
+		// 十六进制 前两位必须是0x 后跟任何十六进制数字(0--9 a--f) 大小写无所谓
+		// 十六进制在严格模式下不会报错
+		var hexNum1 = 0xA;
+		console.log( hexNum1 );
+
+		var hexNum2 = 0x1f;
+		console.log( hexNum2 );
+
+		// 在进行数值计算的时候 八进制和十六进制都会转成十进制
+
+		// +0和-0是相等的
+		var zero1 = +0;
+		var zero2 = -0;
+		console.log( zero1 === zero2 );
+
+	</script>
+
+</body>
+</html>

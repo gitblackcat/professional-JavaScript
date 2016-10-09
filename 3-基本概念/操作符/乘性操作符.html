@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// 乘性操作符：乘法、除法、求模
+
+		/*乘法
+		1.操作数都是数值，执行常规乘法计算。如果乘积超过ECMAScript数值的表示范围，则返回Infinity或-Infinity
+			var num = Number.MAX_VALUE;
+			console.log( num * num );//Infinity
+
+		2.如果一个操作数是NaN,结果为NaN
+			console.log( 5 * NaN );//NaN
+
+		3.如果是Infinity与0相乘，结果为NaN
+			console.log( Infinity * 0 );//NaN
+
+		4.如果是Infinity相乘，结果是Infinity
+			console.log( Infinity * Infinity );//Infinity
+
+		5.如果有一个操作数不是数值，则在后台调用Number()将其转换为数值，再按上述规则
+			console.log( 5*null );//0
+		*/
+
+		/*除法
+		1.操作数都是数值，执行常规乘法计算。如果乘积超过ECMAScript数值的表示范围，则返回Infinity或-Infinity
+			var num = Number.MAX_VALUE;
+			console.log( num / 0.001 );//Infinity
+
+		2.如果一个操作数是NaN，结果为NaN
+			console.log( NaN / 5 );//NaN
+
+		3.如果Infinity被Infinity除，结果是NaN
+			console.log( Infinity / Infinity );//NaN
+
+		4.如果0被0除，结果是NaN
+			console.log( 0 / 0 );
+
+		5.如果是非零的有限数被零除，结果为Infinity或者-Infinity
+			console.log( 5 / 0 );//Infinity
+
+		6.如果是Infinity被任何数值除，则结果是Infinity或者-Infinity
+			console.log( Infinity / 5 );//Infinity
+			console.log( -Infinity / 0 );//-Infinity
+
+		7.如果有一个操作数不是数值，则在后台调用Number()将其转换为数值，再按上述规则
+			console.log( 5 / null );//Infinity
+		*/
+
+		/*求模
+		1.如果操作数都是数值，执行常规除法计算，返回除得的余数
+			console.log( 8 % 5 );//3
+
+		2.如果被除数是无穷大，而除数是有限大的数值，返回NaN
+			console.log( Infinity % 5 );//NaN
+
+		3.如果是Infinity被Infinity除，返回NaN
+			console.log( Infinity % Infinity );//NaN
+
+		4.如果被除数是有限大，而除数是0，返回NaN
+			console.log( 5 % 0 );//NaN
+
+		5.如果被除数是有限大，除数是无限大，返回被除数
+			console.log( 5 % Infinity );//5
+
+		6.如果被除数是0，结果为0
+			console.log( 0 % 5 );//0
+
+		7.如果有一个操作数不是数值，则在后台调用Number()将其转换为数值，再按上述规则
+			console.log( 5 % null );//NaN
+	</script>
+
+</body>
+</html>

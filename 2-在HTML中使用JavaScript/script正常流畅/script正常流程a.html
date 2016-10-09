@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="script正常流程a1.js"></script>
+	<script type="text/javascript" src="script正常流程a2.js"></script>
+	<!-- 在没有defer和async的情况下 浏览器会从上而下依次解析js文件 -->
+	<!-- javascript是单线程的 alert是阻塞的 alert不关闭 下面什么也执行不了 setInterval和setTimeout是异步的 -->
+	<!-- 这里的顺序是js加载了1.js的文件 由于1.js里面是setTimeout是异步的 所以浏览器先把setTimeout进行了保存 先把2.js里面的内容运行完毕 再运行setTimeout里的内容
+		所以这里先弹出2.js的内容 再弹出1.js里的内容 -->
+</head>
+<body>
+	
+	
+
+</body>
+</html>

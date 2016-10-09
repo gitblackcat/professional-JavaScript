@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		/* 大于 小于
+		1.两个操作数都是数值，执行数值比较 console.log( 5 > 3 )//true
+		2.两个操作数都是字符串，比较两个字符长对应的字符串编码
+			console.log( 'abc' > 'Abc' );//true比较的是a和A
+			console.log( 'abc' > 'ab' );//true第一个和第二个都相等 比较第三个
+			console.log( '23' < '3' );//true '2'的字符编码是50 '3'的字符编码是51
+		3.如果一个操作数是数值，则将另一个操作数转为数值 console.log( '23' < 3 );//false
+		4.如果一个操作数是对象，则调用对象的valueOf()方法，然后执行比较，如果没有valueOf()方法，则调用toString()方法，然后进行比较
+		5.如果一个操作数是布尔值，则将其转为数值，在比较
+			console.log( 5 > true );//true
+			console.log( true > '0' );//true
+		6.NaN 跟任何值比较都是false
+			console.log( 3 > NaN );//false
+			console.log( 3 <= NaN );//false
+			所以一个值不大于另一个值，则一定小于等于那个值，在NaN中不成立
+	</script>
+
+</body>
+</html>

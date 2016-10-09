@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		/*逻辑或是短路操作符
+		1.如果第一个操作数是对象，则返回第一个操作数
+		2.如果第一个操作数的求值结果是false，返回第二个操作数
+		3.两个操作数都是对象，返回第一个操作数
+		4.两个操作数都是null，返回null
+		4.两个操作数都是undefined，返回undefined
+		4.两个操作数都是NaN，返回NaN
+		*/
+
+		var a = false;
+		var b = true;
+		var c = a || b;
+		console.log( c );
+	</script>
+
+</body>
+</html>

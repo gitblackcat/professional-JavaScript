@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="script引入式.js">
+		alert(123);//这里的弹窗不会被执行
+	</script>
+	<!-- 在引入式中嵌入js，那么被嵌入的js不会被执行 -->
+	<!-- 在引入式js<script>标签中，只要不存在defer、async属性，那么浏览器都会按照<script>元素在页面中出现的先后顺序对它们依次进行解析 -->
+</head>
+<body>
+	
+</body>
+</html>

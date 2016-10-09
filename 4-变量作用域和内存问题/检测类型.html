@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		console.log( typeof noVar );
+		try{
+			console.log(noVar);
+		}catch(e){
+			console.log(e);
+		}
+
+		console.log('---------------------------------------------------------------------------');
+
+		var s = "Nicholas";
+		var b = true;
+		var i = 22;
+		var u;
+		var n = null;
+		var o = new Object();
+		
+		console.log(typeof s);   //string
+		console.log(typeof i);   //number
+		console.log(typeof b);   //Boolean
+		console.log(typeof u);   //undefined
+		console.log(typeof n);   //object
+		console.log(typeof o);   //object
+
+		console.log('---------------------------------------------------------------------------');
+
+		var arr = [];
+		console.log( arr instanceof Array );//true
+		console.log(arr instanceof Object);//true
+		var reg = /d/;
+		console.log( reg instanceof RegExp );//true
+
+		/*
+			根据规定,所有引用类型的值都是Object的实例.因此,在检测一个引用类型值和Object构造函数时,
+			instanceof操作符始终返回true.而检测基本类型的值会返回false
+		*/
+
+		console.log('---------------------------------------------------------------------------');
+
+		var aaa = null;
+		checkType(aaa);
+		var bbb = function(){};
+		checkType(bbb);
+		var ccc = new Date();
+		checkType(ccc);
+		var ddd = {};
+		checkType(ddd);
+
+		function checkType(variables){
+			switch(typeof variables){
+				case 'string':
+					console.log('string');
+					break;
+				case 'number':
+					console.log('number');
+					break;
+				case 'boolean':
+					console.log('boolean');
+					break;
+				case 'undefined':
+					console.log('undefined');
+					break;
+				case 'object':
+				case 'function':
+					if(!(variables instanceof Object)){
+						console.log('null');
+					}else if(variables instanceof Array){
+						console.log('array');
+					}else if(variables instanceof Date){
+						console.log('date');
+					}else if(variables instanceof RegExp){
+						console.log('regexp');
+					}else{
+						if(typeof variables == 'object'){
+							console.log('object');
+						}else{
+							console.log('function');
+						}
+					}
+					break;
+			}
+		}
+	</script>
+
+</body>
+</html>

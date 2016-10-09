@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		
+		// js中能表示的具体的极限最小、最大数字
+		console.log( Number.MIN_VALUE );
+		console.log( Number.MAX_VALUE );
+		// 如果超出这个最小、最大范围 js将表示为Infinity(+Infinity -Infinity)
+		// 如果一个数在js中表示为Infinity，那么该值无法参与计算
+
+		// isFinite()该方法用来检测一个数值是否在最小、最大值之间
+		var num1 = Number.MAX_VALUE + Number.MAX_VALUE;
+		console.log( isFinite(num1) );
+		var num2 = 888;
+		console.log( isFinite( num2 ) );
+
+		// NaN (Not a Number)
+		// 任何涉及NaN的操作都返回NaN( NaN/10 )
+		// NaN与任何值都不相等 包括自身 console.log( NaN == NaN );false
+		// 0除以0为NaN 正数除以0位Infinity 负数除以0位-Infinity
+		console.log( 'lala'/10 );//NaN
+
+		// isNaN()该方法可以检测一个参数是否可以转换成number
+		console.log( isNaN(10) );
+		console.log( isNaN('10') );
+		console.log( isNaN('blue') );
+		console.log( isNaN(true) );
+		console.log( isNaN(NaN) );
+
+		/*
+		isNaN()也适用于对象。在基于对象调用isNaN()函数时，会首先调用对象的valueOf()方法，然后确定该方法返回的值是否可以转换为数值。
+		如果不能，则基于这个返回值再调用toString()方法，再测试返回值。
+		这个过程也ECMAScript中内置函数和擦偶偶福的一般执行流程(详见3.5节操作符)
+		*/
+
+
+	</script>
+
+</body>
+</html>

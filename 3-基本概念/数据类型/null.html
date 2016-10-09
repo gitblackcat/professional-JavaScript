@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		
+		// 从逻辑角度看null值表示一个空对象指针，这就是typeof操作符检测null值返回object的原因
+
+		/*如果定义的变量准备在将来存放对象，那么最好将该变量初始化为null而不是其他值。这样只要直接检查该值是否等于null而知道该值是否已经保存了一个对象引用
+		if( obj != null ){
+			说明obj已经保存了一个对象引用，可以直接进行某些对象操作
+		}
+		*/
+
+		// undefined值是派生自null值的，因此ECMA-262规定对它们的相等性测试要要返回true
+		console.log( undefined == null );//true
+		console.log( undefined === null );//false
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// 后置递增递减操作符是在包含它们的语句被求值之后才执行的
+		var age = 29;
+		var anotherAge = age-- + 2;
+		console.log( age );//28
+		console.log( anotherAge );//31
+
+		var num1 = 10;
+		var num2 = 5;
+		console.log( num1-- + num2 ); //15
+		console.log( num1 + num2 ); //14
+
+		var num3 = 10;
+		var num4 = 5;
+		/*
+		console.log( num3 * num4-- ); //50
+		console.log( num3 * (num4--) ); //40
+		console.log( num4 ); //3
+		*/		
+
+		/*
+		console.log( num3 / num4-- );//2
+		console.log( num3 / (num4--) );//2.5
+		console.log( num4 );//3
+		*/
+
+		var n = 5;
+		alert(n++);//5
+	</script>
+
+</body>
+</html>

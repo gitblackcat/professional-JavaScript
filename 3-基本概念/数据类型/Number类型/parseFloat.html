@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		
+		//parseFloat()只解析十进制值
+		// 如果字符串是个整数字面量，那么用parseFloat()解析返回整数
+
+		console.log( parseFloat('123') ); //123
+		console.log( parseFloat('0123.21') ); //123.21
+		console.log( parseFloat('-012.45') ); //-12.45
+		console.log( parseFloat('1.89aa') ); //1.89
+		console.log( parseFloat('22.5') ); //22.5
+		console.log( parseFloat('22.34.12') ); //22.34
+		console.log( parseFloat('3.125e7') ); //31250000
+		console.log( parseFloat('  -012.02') ); //-12.02
+
+	</script>
+
+</body>
+</html>
