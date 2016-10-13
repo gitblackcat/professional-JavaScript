@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		/*
+			使用var声明的变量会自动被添加到最接近的环境中.
+			在函数内部,最接近的环境就是函数的局部环境
+			在with语句中,最接近的环境是函数环境
+			如果初始化变量时没有使用var声明,该变量会自动被添加到全局环境
+		*/
+
+		function add(n1,n2){
+			var sum = n1 + n2;
+			return sum;
+		}
+
+		add(10,20);//30
+		alert(sum);//报错
+		// 在add函数中定义了一个sum的局部变量,该变量包含加法操作的结果.虽然结果值从函数中返回了,但变量sum在函数外部
+
+		function add(n1,n2){
+			sum = n1 + n2;
+			return sum;
+		}
+
+		add(10,20);//30
+		alert(sum);//30
+		// 没有var声明,变量sum被添加到全局变量中,所以可以弹出30,不推荐这样写,在严格模式下报错
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		/*
+			当在某环境中为了读取或者写入而引用一个标识符的时候,必须通过搜索来确定该标识符实际代表什么.
+			搜索过程从作用域链的前端开始,向上逐级查询与给定名字匹配的标识符.如果在局部环境中找到该标识符,搜索过程停止,变量就绪(可以理解为就近优先)
+			如果在局部环境正没有找到该变量名,则继续沿作用域链向上搜索,直到全局环境
+		*/
+
+		var color = "blue";
+
+		function getColor(){
+			return color;
+		}
+
+		alert( getColor() );//blue
+
+
+		var person = 'Tom';
+
+		function getName(){
+			var person = 'Jet';
+			return person;
+		}
+
+		alert( getName() );//Jet
+	</script>
+
+</body>
+</html>

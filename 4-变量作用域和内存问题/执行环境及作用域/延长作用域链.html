@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		/*
+			执行环境的类型总共只有两种: 全局和局部(函数),但try-catch语句和catch块能延长作用域链.
+			这两个语句可以在作用域链的前端临时增加一个变量对象,该变量对象会在代码执行后被移除.
+			对with语句来说,会将指定的对象添加到作用域链中;
+			对catch语句来说,会创建一个新的变量对象,其中包含的是被抛出的错误对象的声明.
+		*/
+		function buildUrl(){
+			var qs = "?debug=true";
+
+			with(location){
+				var url = href + qs;
+			}
+
+			return url;
+
+		}
+
+		console.log( buildUrl() );
+
+		// 这里with语句接受的是location对象,在buildUrl的作用域链变量对象前面添加了一个location变量对象,且包含location对象的所有属性和方法
+		// 注意使用var声明的变量会自动被添加到最接近的环境中,在with语句中,最接近的环境是函数环境,所以能返回url
+		/*
+			在IE8及之前版本的JavaScript实现中,存在一个与标准不一致的地方,即在catch语句中捕获的错误对象会被添加到执行环境的变量对象,
+			而不是catch语句的变量对象中.换句话说,即使是在catch块的外部也可以访问到错误对象.
+		*/
+
+	</script>
+
+</body>
+</html>
