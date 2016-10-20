@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		/*
+			indexOf()/lastIndexOf()这两个方法都接受两个参数,第一个是要查找的项的内容,第二个(可选)表示查找七点位置的索引.
+			indexOf()方法从数组开头向后查找;lastIndexOf()从末尾开始向前查找
+			两个方法都返回查找的项在数组中的位置,没找到返回-1
+			查找的项必须严格相等
+			支持IE9+ Firfox2+ Safari3+ Opera9.5+ Chrome
+		*/
+		var numbers = [1,2,3,4,5,4,3,2,1];
+		
+		alert(numbers.indexOf(4));        //3
+		alert(numbers.lastIndexOf(4));    //5
+		
+		alert(numbers.indexOf(4, 4));     //5
+		alert(numbers.lastIndexOf(4, 4)); //3       
+
+		var person = { name: "Nicholas" };
+		var people = [{ name: "Nicholas" }];
+		var morePeople = [person];
+		
+		alert(people.indexOf(person));     //-1
+		alert(morePeople.indexOf(person)); //0
+	</script>
+
+</body>
+</html>
