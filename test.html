@@ -5,13 +5,15 @@
 	<title>Document</title>
 </head>
 <body>
+
+	<span class="time"></span>
 	
 	<script>
-		var values = [1,2,3,4,5];
-var sum = values.reduceRight(function(prev, cur, index, array){
-    return prev - cur;
-});
-alert(sum);
+		var pattern1 = /\[bc\]at/i;
+		console.log( pattern1.source );//\[bc\]at
+
+		var pattern2 = new RegExp("\\[bc\\]at","i");
+		console.log( typeof pattern2.source );//\[bc\]at
 	</script>
 
 </body>
