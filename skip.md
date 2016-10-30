@@ -10,4 +10,4 @@
 
 5.3.3 日期/时间组件方法
 
-5.4.1 RegExp实例属性中的global,ignoreCase,lastIndex,multiline
+5.4.1 RegExp实例属性中的global,ignoreCase,multiline

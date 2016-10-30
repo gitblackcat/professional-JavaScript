@@ -5,8 +5,12 @@
     <script type="text/javascript">
       
         var pattern = new RegExp("\\[bc\\]at", "gi");
-        alert(pattern.toString());    // /\[bc\]at/gi
-        alert(pattern.toLocaleString());    // /\[bc\]at/gi
+        console.log(pattern.toString());    // /\[bc\]at/gi
+        console.log( typeof pattern.toString() );
+        console.log(pattern.toLocaleString());    // /\[bc\]at/gi
+        console.log( typeof pattern.toLocaleString() );
+        console.log(pattern.valueOf());
+        console.log(typeof pattern.valueOf());
 
     </script>
 </head>

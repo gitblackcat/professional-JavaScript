@@ -9,11 +9,13 @@
 	<span class="time"></span>
 	
 	<script>
-		var pattern1 = /\[bc\]at/i;
-		console.log( pattern1.source );//\[bc\]at
+		
+		var text = "000-00-0000";
+		var pattern = /\d{3}-\d{2}-\d{4}/;
 
-		var pattern2 = new RegExp("\\[bc\\]at","i");
-		console.log( typeof pattern2.source );//\[bc\]at
+		if( pattern.test(text) ){
+		    console.log( "The pattern was matched." );
+		}
 	</script>
 
 </body>

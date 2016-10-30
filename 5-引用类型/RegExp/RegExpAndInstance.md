@@ -63,9 +63,9 @@ var pattern2 = new RegExp("[bc]at","i");
 
 ![](RegExp.png)
 
-###RegExp实例属性: source
+###RegExp实例属性: source/lastIndex
 
-`source`返回的是以字面量形式表示的字符串
+- `source`返回的是以字面量形式表示的字符串
 
 ```javascript
 
@@ -77,3 +77,4 @@ console.log( pattern2.source ); //\[bc\]at
 console.log( typeof pattern2.source ); //string
 ```
  
+- `lastIndex`: 整数,表示开始搜索下一个匹配项的字符位置,从0算起.具体见---RegExpInstance.md
