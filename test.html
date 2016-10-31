@@ -5,12 +5,24 @@
 	<title>Document</title>
 </head>
 <body>
+
+	<span class="time"></span>
 	
 	<script>
+<<<<<<< HEAD
 		var now = new Date();
 		console.log(now);
 		var someDate = new Date( Date.parse('2015-05-25T13:13:13') )
 		console.log(someDate);
+=======
+		
+		var text = "000-00-0000";
+		var pattern = /\d{3}-\d{2}-\d{4}/;
+
+		if( pattern.test(text) ){
+		    console.log( "The pattern was matched." );
+		}
+>>>>>>> 075f68ecc3c3b8e1a0b595678a331b1763c4d96a
 	</script>
 
 </body>
