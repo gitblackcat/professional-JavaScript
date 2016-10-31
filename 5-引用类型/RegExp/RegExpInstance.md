@@ -78,3 +78,57 @@ console.log(pattern.valueOf()); // /\[bc\]at/gi  返回正则表达式本身
 console.log(typeof pattern.valueOf()); //object 
 
 ```
+
+###RegExp构造函数属性
+使用以下属性,可以从exec()/test()中提取出更具体的信息
+
+```javascript
+var text = "this has been a short summer";
+var pattern = /(.)hort/g;
+
+/*
+ * Note: Opera doesn't support input, lastMatch, lastParen, or multiline.
+ * Internet Explorer doesn't support multiline.
+ */        
+if (pattern.test(text)){
+    alert(RegExp.input);        //this has been a short summer
+    alert(RegExp.leftContext);  //this has been a   匹配项左边的字符串        
+    alert(RegExp.rightContext); // summer  匹配项右边的字符串
+    alert(RegExp.lastMatch);    //short  最后一次匹配的匹配项
+    alert(RegExp.lastParen);    //s 最后一次匹配的捕获组
+    alert(RegExp.multiline);    //false 布尔值,表示是否所有表达式都使用多行模式
+}
+```
+
+以上也可写成如下:
+
+```javascript
+var text = "this has been a short summer";
+var pattern = /(.)hort/g;
+
+/*
+ * Note: Opera doesn't support short property names.
+ * Internet Explorer doesn't support multiline.
+ */        
+if (pattern.test(text)){
+    alert(RegExp.$_);               //this has been a short summer
+    alert(RegExp["$`"]);            //this has been a            
+    alert(RegExp["$'"]);            // summer
+    alert(RegExp["$&"]);            //short
+    alert(RegExp["$+"]);            //s
+    alert(RegExp["$*"]);            //false
+}
+```
+
+除了以上介绍的几个属性,还有9个用于存储捕获组的构造函数属性,在调用exec()/test()方法时,属性自动被填充
+
+```javascript
+var text = "this has been a short summer";
+var pattern = /(..)or(.)/g;
+      
+if (pattern.test(text)){
+    alert(RegExp.$1);       //sh
+    alert(RegExp.$2);       //t
+}
+//如果有需要,直到.$9为止
+```
