@@ -105,7 +105,7 @@ var textNew = text.match(re);
 console.log( textNew );//["123", "456", "789"]
 ```
 
-- 分组
+- 分组又叫子表达式
 
 ```javascript
 var text = 'a1b2c3d4';
@@ -138,7 +138,29 @@ console.log( textNew ); //10/31/2016
 
 ![ignore-group](ignoreGroup.jpg)
 
-这些元字符在正则表达式中都有一个或多个特殊用途,因此如果想要匹配字符串中包含的这些字符,就必须对它们进行转义
+- 前瞻
+    + 正则表达式从文本头部向尾部开始解析,文本尾部方向成为`前`
+    + `前瞻`就是正则表达式匹配到规则的时候,向文本尾部检查是否符合断言
+    + 后顾/后瞻与前瞻方向相反,即向文本头部方向
+    + javascript不支持后顾
+    + 符合特定断言称为`肯定/正向`匹配,不符合则被称为`否定/负向`匹配
+
+![foresight](foresight.jpg)
+
+```javascript
+//正向匹配
+var text1 = 'a1bbc345';
+var re = /\w(?=\d)/g; //这里我想匹配一个字母或数字或_,但是必须是后面跟着数字的,(?=\d)只是一个断言,我们需要的也只是\w
+var textNew1 = text1.replace(re,'+');
+console.log( textNew1 );//+1bb+++5
+
+//负向匹配
+var text2 = 'a1bbc345'; 
+var re = /\w(?!\d)/g;
+var textNew2 = text2.replace(re,'-');
+console.log( textNew2 );//a---c34- 注意正则会匹配到最后一个字符,所以5变成-了
+```
+
 
 ```javascript
 

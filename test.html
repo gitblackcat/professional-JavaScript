@@ -9,13 +9,21 @@
 	<span class="time"></span>
 	
 	<script>
-		var text = "this has been a short summer";
-var pattern = /(..)or(.)/g;
-      
-if (pattern.test(text)){
-    alert(RegExp.$1);       //sh
-    alert(RegExp.$2);       //t
-}
+	var str = 'a1b2c3d4e5'.replace(/(\d)(\w)(\d)/g,function(match,group1,group2,group3,index,origin){
+	    console.log(match);
+	    console.log(typeof group1);
+	    return parseInt(group1) + parseInt(group3);
+	})
+	console.log(str);
+		
+
+		// var text = '1a2b3c4d5e6f';
+		// var re = /\d(\w)\d/g;
+		// var aa = text.match(re);
+		// console.log( aa );
+		// console.log(text.replace(re,'!'));
+		// var arr = re.exec(text);
+		// console.log(arr);
 	</script>
 
 </body>
