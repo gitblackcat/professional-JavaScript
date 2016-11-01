@@ -9,12 +9,13 @@
 	<span class="time"></span>
 	
 	<script>
-		var arr = [1,4,6,2,7,3,88,54];
-		arr.sort(function (v1,v2) {
-			return v2 - v1;
-		})
-		console.log(arr);
-
+		var text = "this has been a short summer";
+var pattern = /(..)or(.)/g;
+      
+if (pattern.test(text)){
+    alert(RegExp.$1);       //sh
+    alert(RegExp.$2);       //t
+}
 	</script>
 
 </body>
