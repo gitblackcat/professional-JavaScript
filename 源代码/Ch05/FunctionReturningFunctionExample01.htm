@@ -3,9 +3,9 @@
 <head>
     <title>Function returning Function Example</title>
     <script type="text/javascript">
-        function createComparisonFunction(propertyName) {
+        function createComparisonFunction(propertyName) {//这个函数只是为了传参
         
-            return function(object1, object2){
+            return function(object1, object2){  //这里相当于sort(function(v1,v2){})
                 var value1 = object1[propertyName];
                 var value2 = object2[propertyName];
         
@@ -25,7 +25,9 @@
         alert(data[0].name);  //Nicholas
         
         data.sort(createComparisonFunction("age"));
-        alert(data[0].name);  //Zachary        
+        alert(data[0].name);  //Zachary   
+
+
 
     </script>
 </head>
