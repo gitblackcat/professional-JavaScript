@@ -10,12 +10,20 @@
 	
 	<script>
 
-	var str = 'a1b2c3d4e5'.replace(/(\d)(\w)(\d)/g,function(match,group1,group2,group3,index,origin){
-	    console.log(match);
-	    console.log(typeof group1);
-	    return parseInt(group1) + parseInt(group3);
-	})
-	console.log(str);
+	// var str = 'a1b2c3d4e5'.replace(/(\d)(\w)(\d)/g,function(match,group1,group2,group3,index,origin){
+	//     console.log(match);
+	//     console.log(typeof group1);
+	//     return parseInt(group1) + parseInt(group3);
+	// })
+	// console.log(str);
+
+	var str = '1a2b3c4d5e6f',
+	  reg = /\d\w\d/g;
+	var a;
+	while(a = reg.exec(str)){
+	  console.log(a[0])
+	  reg.lastIndex -= 1;
+	}
 		
 
 		// var text = '1a2b3c4d5e6f';
