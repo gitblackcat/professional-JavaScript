@@ -55,6 +55,8 @@ var text2 = '2016-10-31';
 var re2 = /[0-9-]/g; //在范围里面-表示范围 在范围外面-还是表示自身
 var textNew2 = text2.replace(re2,"?");
 console.log( textNew2 );//??????????
+
+var re3 = /[u4e00-u9fa5]/g;  //匹配所有中文
 ```
 
 - 预定义类
