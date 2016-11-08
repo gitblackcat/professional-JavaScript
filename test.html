@@ -10,21 +10,10 @@
 	
 	<script>
 
-		var o1 = {};
-		o1.color = 'red';
-		o1.f1 = function(num1,num2){
-		    o2.f2.call(this,num1,num2);
-		    //这里f1函数的函数执行环境对象是o1,所以this指o1
-		};
-
-		var o2 = {};
-		o2.color = 'green';
-		o2.f2 = function(num1,num2){
-		    alert( this.color );
-		    alert( num1 + num2 )
-		};
-
-		o1.f1(10,10);
+		var strValue = 'hello ';
+		var result = strValue.concat('world');
+		console.log( strValue );//hello
+		console.log( result );
 
 
 	</script>

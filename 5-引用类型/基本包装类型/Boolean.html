@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		//建议永远不要使用Boolean对象
+
+		/*
+			Boolean类型的实例重写了valueOf()方法,返回基本类型值true或false;
+			重写toString()方法,返回字符串'true'或'false'
+		*/
+
+		var falseObject = new Boolean(false);
+		var result = falseObject && true; //布尔表达式所有对象会被转为true
+		console.log(result); //true
+
+		var falseValue = false;
+		result = falseValue && true;
+		console.log(result); //false
+
+		console.log(typeof falseObject); //objcet
+		console.log(typeof falseValue); //boolean
+		console.log(falseObject instanceof Boolean); //true
+		console.log(falseValue instanceof Boolean); //false
+
+
+
+	</script>
+
+</body>
+</html>
