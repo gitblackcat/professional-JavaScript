@@ -13,3 +13,9 @@
 5.4.1 RegExp实例属性中的global,ignoreCase,multiline
 
 5.4.4 模式的局限性
+
+page: 130   9.HTML方法
+
+page: 133   3.Global对象属性
+
+5.7.2 Math对象

@@ -10,10 +10,10 @@
 	
 	<script>
 
-		var strValue = 'hello ';
-		var result = strValue.concat('world');
-		console.log( strValue );//hello
-		console.log( result );
+		var g = function(){
+			return this;
+		}();
+		alert(g);
 
 
 	</script>
