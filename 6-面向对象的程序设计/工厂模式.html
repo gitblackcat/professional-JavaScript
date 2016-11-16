@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// var obj = new Object();
+		// obj.name = 'yzd';
+		// obj.age = 99;
+		// obj.job = 'Software Engineer';
+		// obj.sayName = function(){
+		// 	alert( this.name );
+		// };
+
+		//上述创建了一个具体对象,不过当我要创建成百个这样的对象的时候,怎么办呢? 引入工厂模式
+
+		//传参原料
+		function createPerson(name,age,job){
+			//加工
+			var o = new Object();
+			o.name = name;
+			o.age = age;
+			o.job = job;
+			o.sayName = function(){
+				alert( this.name );
+			};
+
+			//出厂
+			return o;
+		}
+
+		var person1 = createPerson('yzd',99,'Software Engineer');
+		person1.sayName();
+
+		//工厂模式创建的是相同的一类,如上面,创建的只能是一个类似具体人物的Object类型,不具有Date,Array
+		//因此出现了构造函数模式
+	</script>
+
+</body>
+</html>

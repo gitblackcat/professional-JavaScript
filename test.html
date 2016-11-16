@@ -10,10 +10,20 @@
 	
 	<script>
 
-		var g = function(){
-			return this;
-		}();
-		alert(g);
+		function Person(name,age,job){
+		    this.name = name;
+		    this.age = age;
+		    this.job = job;
+		    this.sayName = function(){
+		        alert( this.name );
+		    }
+		}
+
+		var person1 = new Person('白蛇',88,'蛇妖');
+		var person2 = new Person('许仙',99,'医生');
+
+		console.log( person1.constructor );
+		console.log( person1.constructor === person2.constructor );
 
 
 	</script>
