@@ -5,24 +5,20 @@
 	<title>Document</title>
 </head>
 <body>
-
-	<span class="time"></span>
 	
 	<script>
-
-		function Person(){}
+		function Person(){};
 
 		Person.prototype.name = 'yzd';
 		Person.prototype.age = 99;
-		Person.prototype.job = 'Software Engineer';
+		Person.prototype.job = 'Front End Engineer';
 		Person.prototype.sayName = function(){
-		    alert( this.name );
-		};
+			alert( this.name );
+		}
 
-		var person1 = new Person();
-		var person2 = new Person();
-
-		alert( person1.constructor );
+		var person = new Person();
+		console.log( Object.getPrototypeOf( person ) );
+		console.log( Object.getPrototypeOf( person ).name );
 
 	</script>
 
