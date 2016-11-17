@@ -5,11 +5,8 @@
 	<title>Document</title>
 </head>
 <body>
-
-	<span class="time"></span>
 	
 	<script>
-
 		function Person(){}
 
 		Person.prototype.name = "Nicholas";
@@ -19,15 +16,18 @@
 		    alert(this.name);
 		};
 
-		var keys = Object.keys(Person.prototype);
-		console.log(keys);   //["name", "age", "job", "sayName"]
+		var person1 = new Person();
+		var person2 = new Person();
 
-		var p1 = new Person();
-		p1.name = 'yzd';
-		p1.age = 99;
+		person1.name = "Greg";
 
-		console.log( Object.keys(p1) ); //["name", "age"]
+		person1.toString = function(){
+			return 123;
+		}
 
+		for(var key in person1){
+			console.log(key + ' : ' + person1[key]);
+		}
 	</script>
 
 </body>
