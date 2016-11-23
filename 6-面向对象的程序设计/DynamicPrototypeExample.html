@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		//动态检测是否有某个原型方法
+
+		function Person(name, age, job){
+		
+		    //properties
+		    this.name = name;
+		    this.age = age;
+		    this.job = job;
+		    
+		    //methods
+		    // 写上就能用
+		    if (typeof this.sayName != "function"){
+		    
+		        Person.prototype.sayName = function(){
+		            alert(this.name);
+		        };
+		        
+		    }
+		}
+
+		var friend = new Person("Nicholas", 29, "Software Engineer");
+		friend.sayName();
+	</script>
+
+</body>
+</html>

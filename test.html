@@ -10,24 +10,26 @@
 	
 	<script>
 
-		function Person(){}
+		function SuperType(){
+		    this.property = true;
+		}
 
-		Person.prototype.name = "Nicholas";
-		Person.prototype.age = 29;
-		Person.prototype.job = "Software Engineer";
-		Person.prototype.sayName = function(){
-		    alert(this.name);
-		};
+		SuperType.prototype.getSuperValue = function(){
+		    return this.property;
+		}
 
-		var keys = Object.keys(Person.prototype);
-		console.log(keys);   //["name", "age", "job", "sayName"]
+		function SubType(){
+		    this.subproperty = false;
+		}
 
-		var p1 = new Person();
-		p1.name = 'yzd';
-		p1.age = 99;
+		SubType.prototype = new SuperType();
 
-		console.log( Object.keys(p1) ); //["name", "age"]
+		SubType.prototype.getSubValue = function(){
+		    return this.subproperty;
+		}
 
+		var instance = new SubType();
+		console.log( instance.getSuperValue() );
 	</script>
 
 </body>

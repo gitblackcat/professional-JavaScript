@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+	//稳妥对象,指的是没有公共属性,而且其方法也不引用this的对象.稳妥对象最适合在一个安全的环境中(这些环境会禁止使用this和new),或者在防止数据被其他应用程序改动时使用
+
+	//新创建对象实例方法不引用this;
+	//不使用new操作符调用构造函数
+
+		function Person(name,age,job){
+			var o = new Object();
+
+			o.sayName = function(){
+				alert( name );
+			}
+
+			return o;
+		}
+
+		var friend = Person('yzd',99,'Front End Engineer');
+		friend.sayName();
+	</script>
+
+</body>
+</html>
