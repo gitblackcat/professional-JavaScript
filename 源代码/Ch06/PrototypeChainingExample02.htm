@@ -19,18 +19,21 @@
         //inherit from SuperType
         SubType.prototype = new SuperType();
         
-        //new method
+        //new method 添加新方法
         SubType.prototype.getSubValue = function (){
             return this.subproperty;
         };
         
-        //override existing method
+        //override existing method  重写超类型中的方法
         SubType.prototype.getSuperValue = function (){
             return false;
         };
         
         var instance = new SubType();
         alert(instance.getSuperValue());   //false
+
+        var instance1 = new SuperType();
+        alert( instance1.getSuperValue() );
 
         
     </script>

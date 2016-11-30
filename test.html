@@ -10,26 +10,45 @@
 	
 	<script>
 
-		function SuperType(){
-		    this.property = true;
+		function inheritPrototype(subType,superType){
+		    var prototype = Object(superType.prototype);
+		    prototype.constructor = subType;
+		    subType.prototype = prototype;
 		}
 
-		SuperType.prototype.getSuperValue = function(){
-		    return this.property;
-		}
+		function SuperType(name){  
+		  
+		this.name = name;  
+		  
+		this.colors = ["red","blue","green"];  
+		  
+		}  
+		  
+		SuperType.prototype.sayName = function(){  
+		  
+		alert(this.name);  
+		  
+		}  
+		  
+		function SubType(name,age){  
+		  
+		SuperType.call(this,name);  
+		  
+		this.age = age;  
+		  
+		}  
+		  
+		inheritPrototype(SubType,SuperType);  
+		  
+		SubType.prototype.sayAge = function(){  
+		  
+		alert(this.age);  
+		  
+		}  
 
-		function SubType(){
-		    this.subproperty = false;
-		}
+		var instance = new SubType('yzd',99);
 
-		SubType.prototype = new SuperType();
-
-		SubType.prototype.getSubValue = function(){
-		    return this.subproperty;
-		}
-
-		var instance = new SubType();
-		console.log( instance.getSuperValue() );
+		instance.sayAge();
 	</script>
 
 </body>
