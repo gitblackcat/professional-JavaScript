@@ -6,49 +6,24 @@
 </head>
 <body>
 
-	<span class="time"></span>
-	
 	<script>
 
-		function inheritPrototype(subType,superType){
-		    var prototype = Object(superType.prototype);
-		    prototype.constructor = subType;
-		    subType.prototype = prototype;
+		var condition = false;
+		    // sayHi;
+
+		//never do this!
+		if(condition){
+		    var sayHi = function(){
+		        alert("Hi!");
+		    }
+		} else {
+		    var sayHi = function(){
+		        alert("Yo!");
+		    }
 		}
 
-		function SuperType(name){  
-		  
-		this.name = name;  
-		  
-		this.colors = ["red","blue","green"];  
-		  
-		}  
-		  
-		SuperType.prototype.sayName = function(){  
-		  
-		alert(this.name);  
-		  
-		}  
-		  
-		function SubType(name,age){  
-		  
-		SuperType.call(this,name);  
-		  
-		this.age = age;  
-		  
-		}  
-		  
-		inheritPrototype(SubType,SuperType);  
-		  
-		SubType.prototype.sayAge = function(){  
-		  
-		alert(this.age);  
-		  
-		}  
-
-		var instance = new SubType('yzd',99);
-
-		instance.sayAge();
+		sayHi();
+		
 	</script>
 
 </body>
