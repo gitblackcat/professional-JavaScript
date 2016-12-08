@@ -3,28 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
 </head>
 <body>
-
+	<div id="div"></div>
 	<script>
-
-		var condition = false;
-		    // sayHi;
-
-		//never do this!
-		if(condition){
-		    var sayHi = function(){
-		        alert("Hi!");
-		    }
-		} else {
-		    var sayHi = function(){
-		        alert("Yo!");
-		    }
-		}
-
-		sayHi();
-		
+		var newValue = window.oldValue;
+		console.log(newValue);
 	</script>
-
 </body>
 </html>
