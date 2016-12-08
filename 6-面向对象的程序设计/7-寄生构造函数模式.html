@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		//如果想创建一个具有额外方法的特殊数组,但不能直接修改Array构造函数,因为可以使用这个模式
+		function SpecialArray(){       
+		
+		    //create the array
+		    var values = new Array();
+		    
+		    //add the values
+		    values.push.apply(values, arguments);
+		    
+		    //assign the method
+		    values.toPipedString = function(){
+		        return this.join("|");
+		    };
+		    
+		    //return it
+		    return values;   
+		    //构造函数在不返回值的情况下,默认返回新对象实例.(隐式返回)
+		    //通过构造函数的末尾添加一个return语句,可以重写调用构造函数时返回的值     
+		}
+		
+		var colors = new SpecialArray("red", "blue", "green");
+		alert(colors.toPipedString()); //"red|blue|green"
+
+		alert(colors instanceof SpecialArray);
+
+		//由于寄生构造函数模式只是借了一个构造函数的壳
+		//所以返回的对象与构造函数或者构造函数的原型属性之间没有关系
+
+
+	</script>
+
+</body>
+</html>

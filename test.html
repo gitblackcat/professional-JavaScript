@@ -3,32 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
 </head>
 <body>
-
-	<span class="time"></span>
-	
+	<div id="div"></div>
 	<script>
-
-		function Person(){}
-
-		Person.prototype.name = "Nicholas";
-		Person.prototype.age = 29;
-		Person.prototype.job = "Software Engineer";
-		Person.prototype.sayName = function(){
-		    alert(this.name);
-		};
-
-		var keys = Object.keys(Person.prototype);
-		console.log(keys);   //["name", "age", "job", "sayName"]
-
-		var p1 = new Person();
-		p1.name = 'yzd';
-		p1.age = 99;
-
-		console.log( Object.keys(p1) ); //["name", "age"]
-
+		var newValue = window.oldValue;
+		console.log(newValue);
 	</script>
-
 </body>
 </html>
