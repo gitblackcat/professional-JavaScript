@@ -19,3 +19,7 @@ page: 130   9.HTML方法
 page: 133   3.Global对象属性
 
 5.7.2 Math对象
+
+8.1.3 窗口位置 window.moveTo(),window.moveBy()
+
+8.1.4 窗口大小 window.resizeTo(),window.resizeBy()

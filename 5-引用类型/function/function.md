@@ -74,9 +74,7 @@ var sum = function(n1,n2){
 
 ###作为值的函数
 ```javascript
-
 //对对象数组进行某种要求的排序
-
 function createComparisonFunction(propertyName) {//这个函数只是为了传参
 
     return function(object1, object2){  //这里相当于sort(function(v1,v2){})
@@ -100,6 +98,5 @@ alert(data[0].name);  //Nicholas
 
 data.sort(createComparisonFunction("age"));
 alert(data[0].name);  //Zachary  
-
 ```
 
