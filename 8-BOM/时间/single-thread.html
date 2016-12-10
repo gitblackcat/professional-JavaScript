@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			float: left;
+			margin-right: 5px;
+			margin-bottom: 5px;
+			color: black;
+			font-size: 30px;
+			text-align: center;
+			line-height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		setTimeout(function(){
+			alert(i)
+		},500)
+
+		// 超时调用弹出来的i值为6000,不是在半秒以后弹出来的(时间远大于半秒,否则弹出值将小于6000)
+		// 也就是说超时调用这个任务排在整个for循环任务队列之后执行
+		// 所以侧面证明了js是单线程,而且并不仅是超时值决定代码执行的时间
+		// 决定超时调用里面的代码执行时间,有两个: 超时值,js任务队列中
+		// 超时值决定什么时候把代码插入任务队列,任务队列决定代码什么时候执行
+		// 间歇调用也是这么个理儿
+
+		for( var i=0; i<6000; i++ ){
+			document.body.innerHTML += '<div>' + i + '</div>'
+		}
+
+	</script>
+</body>
+</html>

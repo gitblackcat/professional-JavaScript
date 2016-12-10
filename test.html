@@ -3,13 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<style>
-		
-	</style>
 </head>
-	<frameset cols="50%,50%">
-		<frame src="left.htm" name="leftFrame">
-		<frame src="right.htm" name="rightFrame">
-	</frameset>
-	
+<body>
+	<script>
+		var num = 0,
+			max = 3
+
+		function incrementNumber () {
+			num++
+			num < max ? setTimeout(incrementNumber,500) : alert(num)
+		}
+
+		setTimeout( incrementNumber,500 )
+	</script>
+</body>
 </html>
