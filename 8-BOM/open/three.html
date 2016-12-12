@@ -6,15 +6,22 @@
 </head>
 <body>
 
-	<p>click me then open the window</p>
+	<p class="open">click me then open the window</p>
+	<p class="close">click me then close the window</p>
 	
 	<script type="text/javascript">
-		document.querySelector('p').onclick = function(){
-			var win = window.open( "http://www.baidu.com","_blank","height=400,width=400,resizable=no" )
+		var winOpen
+
+		document.querySelector('.open').onclick = function(){
+			win = window.open( "http://www.baidu.com","_blank","height=400, width=1000,resizable=no" )
 
 			win.moveTo(500,500)
 
-			win.resizeTo(1500,1500)
+			win.resizeTo(1000,1000)
+		}
+
+		document.querySelector('.close').onclick = function(){
+			win.close()
 		}
 	</script>
 
