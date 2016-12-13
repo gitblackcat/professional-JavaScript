@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		a{ display: block; }
+	</style>
+</head>
+<body>
+	<h2>这是第三个页面</h2>
+	<div class="back">后退</div>
+	<br>
+	<div class="forward">前进</div>
+
+	<script>
+		document.querySelector('.back').onclick = function(){
+			history.back()
+		}
+
+		document.querySelector('.forward').onclick = function(){
+			history.forward()
+		}
+
+		console.log(history.length)
+	</script>
+</body>
+</html>
