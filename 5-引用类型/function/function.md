@@ -77,7 +77,9 @@ var sum = function(n1,n2){
 //对对象数组进行某种要求的排序
 function createComparisonFunction(propertyName) {//这个函数只是为了传参
 
-    return function(object1, object2){  //这里相当于sort(function(v1,v2){})
+    return function(object1, object2){  
+        //这里相当于sort(function(v1,v2){})
+        //v1 v2其实就是数组中每一项的意思
         var value1 = object1[propertyName];
         var value2 = object2[propertyName];
 
