@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    	window.onload = function(){
+    		var oDiv2 = document.querySelector('.div2'),
+    			oBox1 = document.querySelector('.box1')
+
+    		oBox1.appendChild(oDiv2)
+    	}
+    </script>
 </head>
 <body>
-	<!-- <div>123</div> -->
-	<button>456</button>
-	<!-- <input type="text" value="123"> -->
-	<!-- <iframe src="http://www.baidu.com" frameborder="0"></iframe> -->
-	<script type="text/javascript">
-		// console.log( document.querySelector('button').childNodes )
-		var a = document.querySelector('button')
-		a.nodeType === 1 ? alert('yes') : alert('no')
-		// a.nodeType === Node.ELEMENT_NODE ? alert('yes') : alert('no')
-	</script>
+	<div class="box1">
+		<div class="box2">box2</div>
+	</div>
+	<div class="div1">
+		<div class="div2">div2</div>
+	</div>
 </body>
 </html>
