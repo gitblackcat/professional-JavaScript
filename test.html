@@ -7,19 +7,22 @@
         window.onload = function(){
             var oBody = document.getElementById('oBody')
             // var oDiv = oBody.getElementById('oDiv')
-            var oDiv = oBody.getElementsByTagName('div')
-            console.log(oDiv)
-            var nameDiv = oBody.getElementsByName('nameDiv')
-            console.log(nameDiv)
+            // var oDiv = oBody.getElementsByTagName('div')
+            // console.log(oDiv)
+            // var nameDiv = oBody.getElementsByName('nameDiv')
+            // console.log(nameDiv)
+            // console.log(oDiv.namedItem('nameDiv'))
+            var aDiv = document.getElementsByName('div')
+            
         }
     </script>
 </head>
 <body id="oBody">
     <div id="oDiv">oDiv</div>
-    <div name="nameDiv">nameDiv</div>
-    <div name="nameDiv">nameDiv</div>
-    <div name="nameDiv">nameDiv</div>
-    <div name="nameDiv">nameDiv</div>
-    <div name="nameDiv">nameDiv</div>
+    <div name="nameDiv" class="name1">nameDiv</div>
+    <div name="nameDiv" class="name2">nameDiv</div>
+    <div name="nameDiv" class="name3">nameDiv</div>
+    <div name="nameDiv" class="name4">nameDiv</div>
+    <div name="nameDiv" class="name5">nameDiv</div>
 </body>
 </html>
