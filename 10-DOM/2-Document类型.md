@@ -30,6 +30,7 @@ Document节点具有下列特性
         var oHtml = document.documentElement
 
         console.log(oHtml === document.childNodes[1]) //true
+        // 这里的document.childNodes[0]表示<!DOCTYPE html>
         console.log(oHtml === document.lastChild) //true
     </script>
 
@@ -37,5 +38,35 @@ Document节点具有下列特性
 </html>
 ```
 
+- document.body: 始终指向`<body>`
 
+所有浏览器都支持document.documentElement,document.body
+
+- document.doctype: 表示<!DOCTYPE html> 但好像并没多少用
+
+####文档信息
+- document.title: 标签页内容
+
+- document.URL: 页面完整URL(即地址栏中显示的URL)
+
+- document.domain: 只包含页面域名
+
+- document.referrer: 上一个页面的URL,当没有上一个页面时为空字符串
+
+注意document.domain和document.referrer都需要在页面打开,不是本地打开,也可以是本地模拟服务器
+
+####查找元素
+- document.getElementById()
+
+该方法接收要取得的元素ID.如果找到相应的元素则返回该元素,否则返回null.
+
+- document.getElementsByTagName()
+
+该方法接收要取得的元素标签名,返回包含至少0个元素的NodeList.在HTML文档中,这个方法会返回HTMLCollection对象,作为一个"动态"集合,该对象与NodeList非常类似
+
+- document.getElementsByName()
+
+
+
+**_注意getElementById(),getElementsByName()前面必须是document,而getElementsByTagName()前面是要是元素节点就好了,所以我觉得应该是Node.getElementsByTagName()_**
 

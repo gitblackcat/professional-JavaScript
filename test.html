@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-</head>
-<body>
-    
     <script>
-        var oHtml = document.documentElement
-
-        console.log(oHtml === document.childNodes[1])
-        console.log(oHtml === document.lastChild)
+        window.onload = function(){
+            var oBody = document.getElementById('oBody')
+            // var oDiv = oBody.getElementById('oDiv')
+            var oDiv = oBody.getElementsByTagName('div')
+            console.log(oDiv)
+            var nameDiv = oBody.getElementsByName('nameDiv')
+            console.log(nameDiv)
+        }
     </script>
-
+</head>
+<body id="oBody">
+    <div id="oDiv">oDiv</div>
+    <div name="nameDiv">nameDiv</div>
+    <div name="nameDiv">nameDiv</div>
+    <div name="nameDiv">nameDiv</div>
+    <div name="nameDiv">nameDiv</div>
+    <div name="nameDiv">nameDiv</div>
 </body>
 </html>
