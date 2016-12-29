@@ -21,7 +21,7 @@ DOM(ÎÄµµ¶ÔÏóÄ£ĞÍ)ÊÇÕë¶ÔHTMLºÍXMLÎÄµµµÄÒ»¸öAPI(Ó¦ÓÃ³ÌĞò±à³Ì½Ó¿Ú).¼ò¶øÑÔÖ®,DOM¿ÉÒÔ
 
 ¶ÔÓÚÒ»¸öHTMLÀ´Ëµ,ÎÄµµ½ÚµãÊÇ¿´²»µ½µÄ.Èç¹ûÓ²Òª¾ßÏó»¯,ÎÒÖ»ÄÜÏëµ½ÈçÏÂÍ¼ËùÊ¾
 
-![document-node](img/document-node.png)
+![document-node](img/document-node1.png)
 
 ####NodeÀàĞÍ
 
@@ -90,9 +90,8 @@ DOM(ÎÄµµ¶ÔÏóÄ£ĞÍ)ÊÇÕë¶ÔHTMLºÍXMLÎÄµµµÄÒ»¸öAPI(Ó¦ÓÃ³ÌĞò±à³Ì½Ó¿Ú).¼ò¶øÑÔÖ®,DOM¿ÉÒÔ
     <button>456</button>
     <script>
         var btn = document.querySelector('button')
-        if( btn.nodeType === 1 ){
-            console.log( btn.nodeName.toLowerCase() ) //button
-        }
+        btn.nodeType === 1 && console.log( btn.nodeName.toLowerCase() )
+        //button
     </script>
 </body>
 </html>
@@ -111,9 +110,8 @@ DOM(ÎÄµµ¶ÔÏóÄ£ĞÍ)ÊÇÕë¶ÔHTMLºÍXMLÎÄµµµÄÒ»¸öAPI(Ó¦ÓÃ³ÌĞò±à³Ì½Ó¿Ú).¼ò¶øÑÔÖ®,DOM¿ÉÒÔ
     <button>456</button>
     <script>
         var btn = document.querySelector('button')
-        if( btn.nodeType === 1 ){
-            console.log( btn.nodeValue ) //null
-        }
+        btn.nodeType === 1 && console.log( btn.nodeValue )
+        // null
     </script>
 </body>
 </html>
@@ -265,11 +263,163 @@ appendChild()ÓÃÓÚÏòchildNodesÁĞ±íµÄÄ©Î²Ìí¼ÓÒ»¸ö½Úµã.Ìí¼Ó½Úµãºó,childNodesµÄĞÂÔö½
 </html>
 ```
 
-![appendChild](img/appendChild.png)
-
 ÈçÍ¼ËùÊ¾,Ô­±¾Ó¦¸ÃÔÚdiv1ÖĞµÄdiv2±»×ªÒÆµ½ÁËbox1ÏÂÃæ
 
+![appendChild](img/appendChild.png)
 
+- insertBefore()
+
+¸Ã·½·¨°ÑĞèÒªµÄ½Úµã²åÈëÄ³¸öÌØ¶¨µÄÎ»ÖÃ
+
+¸Ã·½·¨½ÓÊÕÁ½¸ö²ÎÊı,Òª²åÈëµÄ½ÚµãºÍ²ÎÕÕ½Úµã.²åÈë½Úµãºó,±»²åÈëµÄ½Úµã»á±ä³É²ÎÕÕ½ÚµãµÄÇ°Ò»¸öÍ¬°û½Úµã(previousSibling),Í¬Ê±±»·½·¨·µ»Ø.Èç¹û²ÎÕÕ½ÚµãÊÇnull,ÔòinsertBefore()ÓëappendChild()Ö´ĞĞÏàÍ¬µÄ²Ù×÷,¼´±»²åÈë½ÚµãÌí¼Óµ½childNodesÁĞ±í×îºó
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oBody = document.querySelector('body'),
+                oBtn = document.querySelector('button'),
+                oDiv = document.createElement('div')
+
+            oDiv.innerHTML = 'div'
+
+            var divReturn = oBody.insertBefore(oDiv,null)
+            console.log(divReturn === oDiv) // true
+        }
+    </script>
+</head>
+<body>
+    <button>456</button>
+</body>
+</html>
+```
+
+ÏÂÃæÁ½ÕÅÍ¼·Ö±ğÊÇÒÔoBtnÎª²ÎÕÕ½ÚµãºÍÒÔnullÎª²ÎÕÕ½ÚµãµÄ²åÈë½á¹û
+
+![insertBefore1](img/insertBefore1.png)
+
+![insertBefore2](img/insertBefore2.png)
+
+- replaceChild()
+
+¸Ã·½·¨ÓÃÀ´Ìæ»»½Úµã
+
+¸Ã·½·¨½ÓÊÕÁ½¸ö²ÎÊı,Òª²åÈëµÄ½ÚµãºÍ±»Ìæ»»µÄ½Úµã.±»Ìæ»»µÄ½Úµã½«ÓÉÕâ¸ö·½·¨·µ»Ø,²¢´ÓÎÄµµÊ÷ÖĞÒÆ³ı
+
+±»Ìæ»»µÄ½ÚµãËäÈ»´ÓÎÄµµÊ÷ÖĞÒÆ³ıÁË,µ«ÒÀÈ»ÔÚÎÄµµÖĞ,Ö»ÊÇÔÚÎÄµµÖĞÃ»ÓĞÁËÎ»ÖÃ
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oBody = document.querySelector('body'),
+                oBtn = document.querySelector('button'),
+                oDiv = document.createElement('div')
+
+            oDiv.innerHTML = 'div'
+
+            var elReturn = oBody.replaceChild(oDiv,oBtn)
+
+            console.log(elReturn === oBtn) //true
+        }
+    </script>
+</head>
+<body>
+    <button>456</button>
+</body>
+</html>
+```
+
+![replaceChild](img/replaceChild.png)
+
+
+- removeChild()
+
+¸Ã·½·¨ÓÃÀ´ÒÆ³ı½Úµã
+
+¸Ã·½·¨½ÓÊÕÒ»¸ö²ÎÊı,¼´ĞèÒªÒÆ³ıµÄ½Úµã.±»ÒÆ³ıµÄ½Úµã½«³ÉÎª·½·¨µÄ·µ»ØÖµ
+
+ÓëreplaceChild()·½·¨Ò»Ñù,ÓÃremoveChild()ÒÆ³ıµÄ½ÚµãÒÀÈ»»áÔÚÎÄµµÖĞ
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oBody = document.querySelector('body'),
+                oBtn = document.querySelector('button')
+
+            var elReturn = oBody.removeChild(oBtn)
+
+            console.log(elReturn === oBtn) //true
+        }
+    </script>
+</head>
+<body>
+    <button>456</button>
+</body>
+</html>
+```
+
+![removeChild](img/removeChild.png)
+
+- cloneNode()
+
+¸Ã·½·¨ÓÃÀ´¶Ô½Úµã½øĞĞ¿ËÂ¡,·µ»Ø±»¿ËÂ¡µÄ½ÚµãµÄ¸±±¾,µ«²¢²»ÊÇÔÚÎÄµµÊ÷ÖĞ,ĞèÒª×Ô¼ºÌí¼Ó
+
+¸Ã·½·¨½ÓÊÕÒ»¸ö²¼¶ûÖµ,µ±Îª`true`µÄÊ±ºò,½øĞĞÉî¿½±´,¼°²»½ö¿½±´µ±Ç°½Úµã,Ò²°üÀ¨¸Ã½ÚµãµÄËùÓĞ×Ó½Úµã.µ±Îª`false`µÄÊ±ºò,½øĞĞÇ³¿½±´,Ö»¿½±´µ±Ç°½Úµã
+
+¿ËÂ¡Ò»¸öÔªËØ½Úµã»á¿½±´ËüËùÓĞµÄÊôĞÔÒÔ¼°ÊôĞÔÖµ,µ±È»Ò²¾Í°üÀ¨ÁËÊôĞÔÉÏ°ó¶¨µÄÊÂ¼ş.ÈçÏÂÀı×Ó,±»¿ËÂ¡µÄ½ÚµãÒ²ÓĞÁËµã»÷ÊÂ¼ş
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            margin-bottom: 50px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oBody = document.querySelector('body'),
+                oUl = document.querySelector('ul')
+
+            oBody.appendChild(oUl.cloneNode(true))
+        }
+    </script>
+</head>
+<body>
+    <ul onclick="alert('attribute')">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+</html>
+```
+
+ÈçÏÂÍ¼,ÔÚÊôĞÔÉÏÓµÓĞÁËÏàÍ¬µã»÷ÊÂ¼ş
+
+![cloneNode](img/cloneNode.png)
+
+µ«²»»á¿½±´ÄÇĞ©Ê¹ÓÃaddEventListener()·½·¨»òÕßnode.onclick = fnÕâÖÖÓÃJavaScript¶¯Ì¬°ó¶¨µÄÊÂ¼ş.
 
 
 

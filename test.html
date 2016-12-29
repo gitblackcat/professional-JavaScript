@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script>
-    	window.onload = function(){
-    		var oDiv2 = document.querySelector('.div2'),
-    			oBox1 = document.querySelector('.box1')
-
-    		oBox1.appendChild(oDiv2)
-    	}
-    </script>
 </head>
 <body>
-	<div class="box1">
-		<div class="box2">box2</div>
-	</div>
-	<div class="div1">
-		<div class="div2">div2</div>
-	</div>
+    
+    <script>
+        var oHtml = document.documentElement
+
+        console.log(oHtml === document.childNodes[1])
+        console.log(oHtml === document.lastChild)
+    </script>
+
 </body>
 </html>
