@@ -76,6 +76,3 @@ console.log( oDiv.nodeName === oDiv.tagName ) //true
 - removeAttribute()
 
 该方法会彻底删除指定的特性和特性的值
-
-
-
