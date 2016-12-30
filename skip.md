@@ -31,3 +31,5 @@ page: 201 2.安全限制
 8.4 screen对象
 
 page: 256 domain
+
+page: 259 5.DOM一致性检测
