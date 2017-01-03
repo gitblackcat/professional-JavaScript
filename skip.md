@@ -33,3 +33,11 @@ page: 201 2.安全限制
 page: 256 domain
 
 page: 259 5.DOM一致性检测
+
+page: 270 操作文本节点中文本的方法
+
+page: 273 10.1.5 Comment类型
+
+page: 274 10.1.6 CDATASection类型
+
+page: 274 10.1.7 DocumentType类型

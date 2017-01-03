@@ -76,3 +76,43 @@ console.log( oDiv.nodeName === oDiv.tagName ) //true
 - removeAttribute()
 
 该方法会彻底删除指定的特性和特性的值
+
+####attributes属性
+Element类型是使用attributes属性的唯一一个DOM节点类型.attributes属性包含一个NamedNodeMap,与NodeList类似,也是一个"动态"的集合.就是某个元素节点的特性集合
+
+- getNamedItem(name): 返货nodeName属性等于name的节点(返回特性和特性值),也可以用方括号来替代(方括号里可以写特性也可以写索引)
+
+`console.log( oDiv.attributes.getNamedItem("id") ) //id="xx"`
+
+`console.log( oDiv.attributes["id"] ) //id="xx"`
+
+- removeNamedItem(name): 从列表中移除nodeName属性等于name的节点(就是删除特性)
+
+- setNamedItem(node): 向列表中添加节点,以节点的nodeName属性为索引
+
+```javascript
+var h=document.querySelector("div");
+var typ=document.createAttribute("class");
+typ.nodeValue="democlass";
+h.attributes.setNamedItem(typ);
+```
+
+- item(pos): 输入数字,返回对应数字位置上的特性以及特性值
+
+可以用attributes来设置特性
+
+`element.attributes["id"].nodeValue = "idid"`
+
+####创建元素
+`document.createElement(标签名)`,在html中,标签名不区分大小写
+
+在用createElement()方法创建新元素的同时,也为新元素设置了ownerDocument属性.此时,还可以操作元素的特性,为其添加更多子节点,以及执行其他操作
+
+```javascript
+var oDiv = document.createElement('div')
+oDiv.id = 'idDiv'
+oDiv.className = 'box'
+```
+
+
+

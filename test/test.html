@@ -5,12 +5,15 @@
 	<title>Document</title>
 </head>
 <body>
-    <div class="classDiv">132</div>
 
     <script>
-    	var oDiv = document.querySelector('.classDiv')
-    	// oDiv.setAttribute("Data-name", "dataDiv")
-    	oDiv["data-name"] = "dataDiv"
+    	var wrapper = document.createElement("div")
+
+    	wrapper.appendChild(document.createTextNode("Part 1 "))
+    	wrapper.appendChild(document.createTextNode("Part 2 "))
+
+    	wrapper.normalize()
+    	document.body.appendChild(wrapper)
     </script>
 </body>
 </html>
