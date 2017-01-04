@@ -1,5 +1,5 @@
 ###Document类型
-JS通过Document类型(Document类型不单单指html,也包含xml,而HTMLDocument指的才是html)表示文档.在浏览器中,document对象是HMTLDocument(继承自Document类型)的一个实例,表示整个html页面.document对象是window对象的一个属性,因此可以将其作为全局对象访问
+JS通过Document类型(Document类型不单单指html,也包含xml,而HTMLDocument指的才是html)表示文档.在浏览器中,document对象是HTMLDocument(继承自Document类型)的一个实例,表示整个html页面.document对象是window对象的一个属性,因此可以将其作为全局对象访问
 
 Document节点具有下列特性
 
@@ -62,7 +62,7 @@ Document节点具有下列特性
 
 - document.getElementsByTagName()
 
-该方法接收要取得的元素标签名,返回包含至少0个元素的NodeList.在HTML文档中,这个方法会返回HTMLCollection对象,作为一个"动态"集合,该对象与NodeList非常类似
+该方法接收要取得的元素标签名,返回包含至少0个元素的NodeList.在HTML文档中,这个方法会返回`HTMLCollection对象`,作为一个"动态"集合,该对象与NodeList非常类似
 
 `var images = document.getElementsByTagName('img')`
 

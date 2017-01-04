@@ -78,7 +78,7 @@ console.log( oDiv.nodeName === oDiv.tagName ) //true
 该方法会彻底删除指定的特性和特性的值
 
 ####attributes属性
-Element类型是使用attributes属性的唯一一个DOM节点类型.attributes属性包含一个NamedNodeMap,与NodeList类似,也是一个"动态"的集合.就是某个元素节点的特性集合
+Element类型是使用attributes属性的唯一一个DOM节点类型.attributes属性包含一个`NamedNodeMap`,与NodeList类似,也是一个"动态"的集合.就是某个元素节点的特性集合
 
 - getNamedItem(name): 返货nodeName属性等于name的节点(返回特性和特性值),也可以用方括号来替代(方括号里可以写特性也可以写索引)
 
