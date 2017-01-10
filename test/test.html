@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<!-- <meta charset="UTF-8"> -->
 	<title>Document</title>
 </head>
 <body>
+    <div data-id="9527" data-name="yzd">data</div>
+
     <script>
-        var table = document.createElement('table')
-        table.border = 1
-        table.width = "100%"
-
-        var tbody = document.createElement("tbody")
-        table.appendChild(tbody)
-
-        tbody.insertRow(0)
-        tbody.rows[0].insertCell(0)
-        tbody.rows[0].cells[0].appendChild(document.createTextNode("1,1"))
-        tbody.rows[0].insertCell(1)
-        tbody.rows[0].cells[1].appendChild(document.createTextNode("2,1"))
-
-        document.body.appendChild(table)
+        var oDiv = document.querySelector('div')
+        var a = "2012-12-12"
+        var b = "\'" + a + "\'"
+        console.log(b)
     </script>
 </body>
 </html>
