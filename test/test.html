@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- <meta charset="UTF-8"> -->
+	<meta charset="UTF-8">
 	<title>Document</title>
+    <style>
+        a{
+            margin-bottom: 2000px;
+            display: block;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin-bottom: 2000px;
+        }
+    </style>
 </head>
 <body>
-    <div data-id="9527" data-name="yzd">data</div>
+    <a>按钮2</a>
+    <div id="showscroll"></div>
 
     <script>
-        var oDiv = document.querySelector('div')
-        var a = "2012-12-12"
-        var b = "\'" + a + "\'"
-        console.log(b)
+        var oA = document.querySelector('a'),
+            oDiv = document.querySelector('div')
+
+        oA.onclick = function(){
+            oDiv.scrollIntoView(false)
+        }
     </script>
 </body>
 </html>
