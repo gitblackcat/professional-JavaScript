@@ -11,22 +11,31 @@
         div{
             width: 100px;
             height: 100px;
-            background: red;
+            background: red !important;
             margin-bottom: 2000px;
+        }
+        #showscroll{
+            /* background: green; */
         }
     </style>
 </head>
 <body>
     <a>按钮2</a>
-    <div id="showscroll"></div>
+    <div id="showscroll" style="background: green;">
+    divdiv
+        <h1>123
+            <p>ppp</p>
+        </h1>
+    </div>
 
     <script>
-        var oA = document.querySelector('a'),
-            oDiv = document.querySelector('div')
+        var a = document.querySelector('a'),
+            oDiv = document.querySelector('div'),
+            p = document.querySelector('p')
 
-        oA.onclick = function(){
-            oDiv.scrollIntoView(false)
-        }
+        console.log(oDiv.compareDocumentPosition(a))
+        console.log(oDiv.contains(p))
+        console.log(oDiv.outerText)
     </script>
 </body>
 </html>
