@@ -43,3 +43,7 @@ page: 274 10.1.6 CDATASection类型
 page: 274 10.1.7 DocumentType类型
 
 page: 303 11.4.5 滚动
+
+page: 305--310 12.1 DOM变化
+
+page: 311 setUserData (目前多数主流浏览器不支持)
