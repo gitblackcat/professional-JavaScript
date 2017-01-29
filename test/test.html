@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
 </head>
 <body>
+    <div style="background-color: red;border: 1px solid #000;width: 100px;height: 100px;"></div>
+
     <script>
-        // var suppotrsDOM2Core = document.implementation.hasFeature("Core","2.0")
-        // var suppotrsDOM3Core = document.implementation.hasFeature("Core","3.0")
-        // var suppotrsDOM2HTML = document.implementation.hasFeature("HTML","2.0")
-        // var suppotrsDOM2Views = document.implementation.hasFeature("Views","2.0")
+        var oDiv = document.querySelector('div')
 
-        // console.log(supportsDOM2Core)
-        // console.log(suppotrsDOM3Core)
-        // console.log(suppotrsDOM2HTML)
-        // console.log(suppotrsDOM2Views)
+        console.log(oDiv.style.cssText) //"background-color: red;border: 1px solid #000;width: 100px;height: 100px;"
 
-        // var div1 = document.createElement('div'),
-        //     div2 = document.createElement('div')
+        console.log(oDiv.style.getPropertyValue('width'))
 
-        // div1.className = 'box'
-        // div2.className = 'box'
+        oDiv.style.setProperty("opacity",0.3)
 
-        // console.log(div1.isSameNode(div1))
-        // console.log(div1.isEqualNode(div2))
-        // console.log(div1.isSameNode(div2))
-
+        oDiv.style.removeProperty("border")
     </script>
 </body>
 </html>

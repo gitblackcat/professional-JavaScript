@@ -8,6 +8,9 @@ var suppotrsDOM2Core = document.implementation.hasFeature("Core","2.0")
 var suppotrsDOM3Core = document.implementation.hasFeature("Core","3.0")
 var suppotrsDOM2HTML = document.implementation.hasFeature("HTML","2.0")
 var suppotrsDOM2Views = document.implementation.hasFeature("Views","2.0")
+
+var suppotrsDOM2CSS = document.implementation.hasFeature("CSS","2.0")
+var suppotrsDOM2CSS2 = document.implementation.hasFeature("CSS2","2.0")
 ```
 
 - isSameNode()/isEqualNode()
