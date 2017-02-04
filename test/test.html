@@ -1,41 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-    <style>
-        a{
-            margin-bottom: 2000px;
-            display: block;
-        }
-        div{
-            width: 100px;
-            height: 100px;
-            background: red !important;
-            margin-bottom: 2000px;
-        }
-        #showscroll{
-            /* background: green; */
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Document</title>
 </head>
 <body>
-    <a>按钮2</a>
-    <div id="showscroll" style="background: green;">
-    divdiv
-        <h1>123
-            <p>ppp</p>
-        </h1>
-    </div>
+    <div style="background-color: red;border: 1px solid #000;width: 100px;height: 100px;"></div>
 
     <script>
-        var a = document.querySelector('a'),
-            oDiv = document.querySelector('div'),
-            p = document.querySelector('p')
+        var oDiv = document.querySelector('div')
 
-        console.log(oDiv.compareDocumentPosition(a))
-        console.log(oDiv.contains(p))
-        console.log(oDiv.outerText)
+        console.log(oDiv.style.cssText) //"background-color: red;border: 1px solid #000;width: 100px;height: 100px;"
+
+        console.log(oDiv.style.getPropertyValue('width'))
+
+        oDiv.style.setProperty("opacity",0.3)
+
+        oDiv.style.removeProperty("border")
     </script>
 </body>
 </html>
