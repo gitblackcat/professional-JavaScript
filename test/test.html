@@ -3,20 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        div{
+            font-size: 20px;
+            line-height: 100px;
+            text-align: center;
+            font-family: "microsoft yahei";
+            color: #fff;
+        }
+        div:after{
+            content: "123";
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
-    <div style="background-color: red;border: 1px solid #000;width: 100px;height: 100px;"></div>
+    <div style="background-color: red;border: 1px solid #000;width: 100px;height: 100px;">5</div>
 
     <script>
-        var oDiv = document.querySelector('div')
+        var oDiv = document.querySelector('div'),
+            // comStyle = document.defaultView.getComputedStyle(oDiv,":after")
+            comStyle = window.getComputedStyle(oDiv,":after")
 
-        console.log(oDiv.style.cssText) //"background-color: red;border: 1px solid #000;width: 100px;height: 100px;"
+        console.log(comStyle)
 
-        console.log(oDiv.style.getPropertyValue('width'))
-
-        oDiv.style.setProperty("opacity",0.3)
-
-        oDiv.style.removeProperty("border")
+        console.log(document.implementation.hasFeature("StyleSheets","2.0"))   
     </script>
 </body>
 </html>

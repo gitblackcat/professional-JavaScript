@@ -13,12 +13,12 @@
         function showComputedStyles(){
             var myDiv = document.getElementById("myDiv");
             var computedStyle = document.defaultView.getComputedStyle(myDiv, null);
-            alert(computedStyle.backgroundColor);   //"red"
-            alert(computedStyle.width);             //"100px"
-            alert(computedStyle.height);            //"200px"
-            alert(computedStyle.border);            //"1px solid black"
-            alert(computedStyle.borderLeftWidth);   //"1px"
-            alert(computedStyle.visibility);
+            console.log(computedStyle.backgroundColor);   //"red"
+            console.log(computedStyle.width);             //"100px"
+            console.log(computedStyle.height);            //"200px"
+            console.log(computedStyle.border);            //"1px solid black"
+            console.log(computedStyle.borderLeftWidth);   //"1px"
+            console.log(computedStyle.visibility);
         }
     </script>
 </head>

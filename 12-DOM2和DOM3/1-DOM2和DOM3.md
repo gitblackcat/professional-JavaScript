@@ -11,6 +11,8 @@ var suppotrsDOM2Views = document.implementation.hasFeature("Views","2.0")
 
 var suppotrsDOM2CSS = document.implementation.hasFeature("CSS","2.0")
 var suppotrsDOM2CSS2 = document.implementation.hasFeature("CSS2","2.0")
+
+var suppotrsDOM2StyleSheets = document.implementation.hasFeature("StyleSheets","2.0")
 ```
 
 - isSameNode()/isEqualNode()
