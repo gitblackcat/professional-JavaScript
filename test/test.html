@@ -4,33 +4,39 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-        div{
-            font-size: 20px;
-            line-height: 100px;
-            text-align: center;
-            font-family: "microsoft yahei";
-            color: #fff;
+        html{
+            border: 10px solid #000;
         }
-        div:after{
-            content: "123";
-            display: block;
-            width: 200px;
-            height: 200px;
-            background-color: yellow;
+        body{
+            height: 2000px;
+            overflow: hidden;
+        }
+        div{
+            /* position: fixed; */
+            /* position: absolute; */
+            /* position: relative; */
+            width: 2800px;
+            height: 2800px;
+            background-color: red;
+            margin-left: 100px;
+        }
+        header{
+            position: absolute;
+            /* position: relative; */
+            /* position: fixed; */
+            border: 5px solid #ff0;
+            padding: 100px;
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <div style="background-color: red;border: 1px solid #000;width: 100px;height: 100px;">5</div>
+    <header>
+        <div>5</div> 
+    </header>
 
     <script>
-        var oDiv = document.querySelector('div'),
-            // comStyle = document.defaultView.getComputedStyle(oDiv,":after")
-            comStyle = window.getComputedStyle(oDiv,":after")
-
-        console.log(comStyle)
-
-        console.log(document.implementation.hasFeature("StyleSheets","2.0"))   
+        console.log(document.documentElement.clientWidth)
     </script>
 </body>
 </html>
