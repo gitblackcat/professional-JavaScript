@@ -4,39 +4,24 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-        html{
-            border: 10px solid #000;
-        }
-        body{
-            height: 2000px;
-            overflow: hidden;
-        }
-        div{
-            /* position: fixed; */
-            /* position: absolute; */
-            /* position: relative; */
-            width: 2800px;
-            height: 2800px;
-            background-color: red;
-            margin-left: 100px;
+        html,body{
+            margin: 0;
+            padding: 0;
         }
         header{
-            position: absolute;
-            /* position: relative; */
-            /* position: fixed; */
-            border: 5px solid #ff0;
-            padding: 100px;
-            margin: 0;
+            width: 100px;
+            height: 2500px;
+            background-color: red;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div>5</div> 
-    </header>
+    <header></header>
 
     <script>
-        console.log(document.documentElement.clientWidth)
+        var oHeader = document.querySelector('header')
+
+        console.log(oHeader.getBoundingClientRect())
     </script>
 </body>
 </html>
