@@ -3,25 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <style>
-        html,body{
-            margin: 0;
-            padding: 0;
-        }
-        header{
-            width: 100px;
-            height: 2500px;
-            background-color: red;
-        }
-    </style>
 </head>
 <body>
     <header></header>
 
     <script>
-        var oHeader = document.querySelector('header')
+        var supportsTraversals = document.implementation.hasFeature("Traversal","2.0"),
+            supportsNodeIterator = typeof document.createNodeIterator == "function",
+            supportsTreeWalker = typeof document.createTreeWalker == "function"
 
-        console.log(oHeader.getBoundingClientRect())
+            console.log(supportsTraversals)
+            console.log(supportsNodeIterator)
+            console.log(supportsTreeWalker)
     </script>
 </body>
 </html>
