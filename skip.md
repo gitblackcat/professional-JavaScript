@@ -45,3 +45,7 @@ page: 305--310 12.1 DOM变化
 page: 311 setUserData (目前多数主流浏览器不支持)
 
 page: 318 CSS规则(基本用不上)
+
+page: 332 TreeWalker对象的currentNode()方法
+
+page: 332--344 12.4 范围

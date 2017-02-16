@@ -5,19 +5,21 @@
         <script type="text/javascript">
            function makeList() {
                 var div = document.getElementById("div1");
-                var filter = function(node){
-                    return (node.tagName.toLowerCase() == "li") ? 
-                        NodeFilter.FILTER_ACCEPT : 
-                        NodeFilter.FILTER_SKIP;
-                };
+                // var filter = function(node){
+                //     return (node.tagName.toLowerCase() == "li") ? 
+                //         NodeFilter.FILTER_ACCEPT : 
+                //         NodeFilter.FILTER_SKIP;
+                // };
                 
-                var walker = document.createTreeWalker(div, NodeFilter.SHOW_ELEMENT, filter, false);
+                var walker = document.createTreeWalker(div, NodeFilter.SHOW_ELEMENT, null, false);
 
                 var output = document.getElementById("text1");
                 var node = walker.nextNode();
                 while (node !== null) {
                     output.value += node.tagName + "\n";
                     node = walker.nextNode();
+                    // alert(walker.currentNode)
+                    console.log(walker.currentNode)
                 }
 
            }
