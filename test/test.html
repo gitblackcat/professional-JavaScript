@@ -6,15 +6,20 @@
 </head>
 <body>
     <header></header>
+    <div>click me</div>
+    <input type="button" value="Click Me" onclick = "null">
 
     <script>
-        var supportsTraversals = document.implementation.hasFeature("Traversal","2.0"),
-            supportsNodeIterator = typeof document.createNodeIterator == "function",
-            supportsTreeWalker = typeof document.createTreeWalker == "function"
+        var a = 123
 
-            console.log(supportsTraversals)
-            console.log(supportsNodeIterator)
-            console.log(supportsTreeWalker)
+        function showMes () {
+            // with(document){
+            //     with(this){
+            //         alert(a)
+            //     }
+            // }
+            alert(a)
+        }
     </script>
 </body>
 </html>
