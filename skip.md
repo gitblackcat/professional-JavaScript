@@ -49,3 +49,7 @@ page: 318 CSS规则(基本用不上)
 page: 332 TreeWalker对象的currentNode()方法
 
 page: 332--344 12.4 范围
+
+page: 352 13.2.4 IE事件处理程序
+
+page: 353 13.2.5 跨浏览器的事件处理程序
