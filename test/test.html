@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #f00;
+        }
+        p{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
 </head>
 <body>
-    <input type="text">
-    <button type="button">click</button>
-    <div id="divdiv">13</div>
+    <div id="divdiv">
+        123123
+        <p>ppp</p>
+    </div>
 
     <script>
-        var val = 123
-
-        document.body.onclick = function(){
-            handle(event,val)
+        document.querySelector('#divdiv').onmouseover = function(){
+            console.log(1)
         }
-
-        function handle(event,num){
-            console.log(event.type)
-            console.log(num)
-        }
-
-
     </script>
 </body>
 </html>

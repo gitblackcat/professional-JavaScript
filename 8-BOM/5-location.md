@@ -2,7 +2,7 @@
 
 以下是location对象的所有属性
 
-![location-object](../img/location.png)
+![location-object](img/location.png)
 
 ####查询字符串参数优化
 ```javascript

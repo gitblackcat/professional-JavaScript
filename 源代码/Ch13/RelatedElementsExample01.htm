@@ -12,7 +12,8 @@
             event = EventUtil.getEvent(event);
             var target = EventUtil.getTarget(event);
             var relatedTarget = EventUtil.getRelatedTarget(event);
-            alert("Moused out of " + target.tagName + " to " + relatedTarget.tagName);        
+            alert("Moused out of " + target.tagName + " to " + relatedTarget.tagName); 
+            console.log(event)       
         }); 
 
     </script>
