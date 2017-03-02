@@ -4,15 +4,8 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-        div{
-            width: 300px;
-            height: 300px;
-            border: 1px solid #f00;
-        }
-        p{
-            width: 100px;
-            height: 100px;
-            border: 1px solid #000;
+        body{
+            height: 3000px;
         }
     </style>
 </head>
@@ -23,8 +16,8 @@
     </div>
 
     <script>
-        document.querySelector('#divdiv').onmouseover = function(){
-            console.log(1)
+        document.onkeyup = function(event){
+            console.log(event.keyCode)
         }
     </script>
 </body>
