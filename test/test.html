@@ -22,7 +22,11 @@
     </div>
 
     <script>
-
+        document.onreadystatechange = function(){
+            if( this.readyState === "interactive" ){
+                alert("Content loaded")
+            }
+        }
     </script>
 </body>
 </html>

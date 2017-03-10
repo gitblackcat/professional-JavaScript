@@ -64,5 +64,26 @@ DOMContentLoaded事件在形成完成DOM树之后就会触发,不理会图像,JS
 
 从这里看出setTimeout和setInterval的异步的意思不仅仅局限于先运行其他js代码,而在于所有代码(不只是js)
 
+####readystatechange事件
+IE为DOM文档中的某些部分提供了readystatechange事件.该事件的目的是提供与文档或元素的加载状态有关的信息,但该事件的行为有时候也很难预料.支持readystatechange事件的每个对象都有一个readyState属性,可能包含下列5个值中的一个:
 
+- uninitialized(未初始化): 对象存在但尚未初始化
+
+- loading(正在加载): 对象正在加载数据
+
+- loaded(加载完毕): 对象加载数据完成
+
+- interactive(交互): 可以操作对象了,但还没有完全加载
+
+- complete(完成): 对象已经加载完成
+
+以上状态未必完全适用于一个对象.如果某个阶段不适用于某个对象,则该对象那个完全可能跳过该阶段;但也没有规定哪个阶段适用于哪个对象.这意味着readystatechange事件经常少于4次,而readystatechange属性的值也不总是连续的
+
+```javascript
+document.onreadystatechange = function(){
+    if( this.readyState === "interactive" ){
+        alert("Content loaded")
+    }
+}
+```
 
