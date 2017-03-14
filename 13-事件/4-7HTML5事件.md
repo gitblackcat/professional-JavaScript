@@ -87,3 +87,32 @@ document.onreadystatechange = function(){
 }
 ```
 
+####pageshow和pagehide事件
+`往返缓存`(back-forward cache,或bfcache),可以在用户使用浏览器的"后退"和"前进"按钮时加快页面的转换速度.该缓存不仅保存着页面数据,还保存了DOM和JS的状态;实际上是将整个页面都保存在了内存里.如果页面位于bfcache中,那么再次打开该页面时就不会触发load事件.尽管由于内存中保存了整个页面的状态,不触发load事件也不应该会导致什么问题,但为了更形象说明bfcache的行为,引入`pageshow`和`pagehide`事件
+
+`pageshow`事件在页面显示时触发,无论该页面是否来自bfcache.在重新加载的页面中,pageshow会在load事件触发后触发;而对于bfcache中的页面,pageshow会在页面状态完全恢复的那一刻触发.
+
+**_注意,虽然该事件的目标是document,但必须将其事件处理程序加到window上_**
+
+pageshow事件的event对象还包含一个名为`persisted`的布尔值属性.如果页面被保存在了bfcache中,则该属性的值为true;否则为false
+
+`pagehide`事件会在浏览器卸载页面的时候触发,而且是在unload事件之前触发.*与pageshow事件一样,pagehide在document上面触发,但其事件处理程序必须添加到window对象上*
+
+该事件的event对象也包含`persisted`属性
+
+对于pageshow事件,如果页面是从bfcache中加载的,那么persisted的值就是true;对于pagehide事件,如果页面在卸载之后会保存在bfcache中,那么persisted的值会被设置为true
+
+支持以上两个事件的浏览器: Firefox,Safari5+,Chrome,Opera.IE9不支持
+
+指定了`onunload`事件处理程序的页面会被自动排除在bfcache之外,即使事件处理程序是空的.原因在于,onunload最常用于撤销在onload中所执行的操作,而跳过onload后再次显示页面很可能就会导致页面不正常
+
+####hashchange事件
+HTML5新增了`hashchange`事件,以便在URL的参数列表(即URL中`#`号后面的所有字符串)发生变化时通知开发人员.之所以新增该事件,是因为在Ajax应用中,开发人员经常要利用URL参数列表来保存状态或导航信息.
+
+**_必须把hashchange事件处理程序添加到window对象上_**,然后URL参数列表只要变化就会调用它.此时的event对象包含额外两个属性: `oldURL`和`newURL`.这两个属性分别保存着参数列表变化前后的完整URL
+
+支持hashchange事件的浏览器有IE8+,Firefox3.6+,Safari5+,Chrome和Opera10.6+
+
+只有Firefox6+,Chrome和Opera支持oldURL和newURL属性
+
+
