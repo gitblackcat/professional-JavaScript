@@ -9,12 +9,12 @@
     <div id="output"></div>
     <div id="arrow" style="background:#000;width:3px;height:300px;margin:0 auto;"></div>
     <script>
-    EventUtil.addHandler(window, "deviceorientation", function(event){
-        var output = document.getElementById("output");
-        var arrow = document.getElementById("arrow");
-        arrow.style.webkitTransform = "rotate(" + Math.round(event.alpha) + "deg)";
-        output.innerHTML = "Alpha=" + event.alpha + ", Beta=" + event.beta + ", Gamma=" + event.gamma + "<br>";
-    });
+        EventUtil.addHandler(window, "deviceorientation", function(event){
+            var output = document.getElementById("output")
+            var arrow = document.getElementById("arrow")
+            arrow.style.webkitTransform = "rotate(" + Math.round(event.alpha) + "deg)"
+            output.innerHTML = "Alpha=" + event.alpha + ", Beta=" + event.beta + ", Gamma=" + event.gamma + "<br>" + event.absolute + "<br>" + event.compassCalibrated;
+        })
 
     </script>
 </body>
