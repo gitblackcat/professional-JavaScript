@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <style>
-        body{
-            height: 3000px;
-        }
-    </style>
-    <script>
-        // setTimeout(function(){
-            var oDiv = document.getElementById('divdiv')
-            oDiv.style.color = "red"
-        // },0)
-    </script>
 </head>
 <body>
-    <div id="divdiv">
-        123123
-        <p>ppp</p>
-    </div>
+    <ul>
+        <li id="goSomewhere">Go somewhere</li>
+        <li id="doSomething">Do something</li>
+        <li id="sayHi">Say hi</li>
+    </ul>
 
     <script>
-        document.onreadystatechange = function(){
-            if( this.readyState === "interactive" ){
-                alert("Content loaded")
+        var oUl = document.querySelector('ul')
+
+        oUl.onclick = function(event){
+            switch (event.target.id) {
+                case 'goSomewhere':
+                    window.location.href = "http://www.baidu.com"
+                    break
+                case 'doSomething':
+                    event.target.style.backgroundColor = 'red'
+                    break
+                case 'sayHi':
+                    alert("Hi")
+                    break
             }
         }
     </script>
