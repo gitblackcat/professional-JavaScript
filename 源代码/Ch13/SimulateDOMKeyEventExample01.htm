@@ -26,7 +26,8 @@
             //DOM Level 3 implementation
             if (document.implementation.hasFeature("KeyboardEvent", "3.0")){
                 event = document.createEvent("KeyboardEvent");
-                event.initKeyboardEvent("keydown", true, true, "a", 0, "Shift");            
+                event.initKeyboardEvent("keydown", true, true, "a", 0, "Shift");        
+                // event.initKeyboardEvent("keydown", true, true, true, 0, "Shift");       
             } else {
                 try {
                     //Firefox implementation

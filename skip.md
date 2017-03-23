@@ -67,3 +67,9 @@ page: 384 5.设备中的键盘事件
 page: 396 2.MozOrientation事件
 
 page: 401 2.手势事件 只支持移动Safari
+
+page: 3.模拟其他事件
+
+page: 4.自定义DOM事件
+
+page: 13.6.2 IE中的事件模拟(ie8)
