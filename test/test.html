@@ -5,27 +5,25 @@
     <title>Document</title>
 </head>
 <body>
-    <ul>
-        <li id="goSomewhere">Go somewhere</li>
-        <li id="doSomething">Do something</li>
-        <li id="sayHi">Say hi</li>
-    </ul>
+    <button class="btn1">click1</button>
+    <button class="btn2">click2</button>
 
     <script>
-        var oUl = document.querySelector('ul')
+        var btn1 = document.querySelector('.btn1'),
+            btn2 = document.querySelector('.btn2')
 
-        oUl.onclick = function(event){
-            switch (event.target.id) {
-                case 'goSomewhere':
-                    window.location.href = "http://www.baidu.com"
-                    break
-                case 'doSomething':
-                    event.target.style.backgroundColor = 'red'
-                    break
-                case 'sayHi':
-                    alert("Hi")
-                    break
-            }
+        btn1.onclick = function(event){
+            console.log('clicked')
+            console.log(event.screenX)
+        }
+
+        btn2.onclick = function(){
+            var event = document.createEvent('MouseEvents')
+
+            event.initMouseEvent('click', true, true, document.defaultView, 0, 100, 0, 0, 0, false, 
+                                 false, false, false, 0, btn2)
+
+            btn1.dispatchEvent(event)
         }
     </script>
 </body>
