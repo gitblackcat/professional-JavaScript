@@ -5,25 +5,15 @@
     <title>Document</title>
 </head>
 <body>
-    <button class="btn1">click1</button>
-    <button class="btn2">click2</button>
+    <form method="post" action="javascript:alert('Form submitted!')">
+        <input type="text">
+        <input type="text">
+        <input type="submit" value="submit">
+    </form>
 
     <script>
-        var btn1 = document.querySelector('.btn1'),
-            btn2 = document.querySelector('.btn2')
-
-        btn1.onclick = function(event){
-            console.log('clicked')
-            console.log(event.screenX)
-        }
-
-        btn2.onclick = function(){
-            var event = document.createEvent('MouseEvents')
-
-            event.initMouseEvent('click', true, true, document.defaultView, 0, 100, 0, 0, 0, false, 
-                                 false, false, false, 0, btn2)
-
-            btn1.dispatchEvent(event)
+        document.forms[0].onsubmit = function(event){
+            console.log(event.target)
         }
     </script>
 </body>
