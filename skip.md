@@ -68,8 +68,8 @@ page: 396 2.MozOrientation事件
 
 page: 401 2.手势事件 只支持移动Safari
 
-page: 3.模拟其他事件
+page: 409 3.模拟其他事件
 
-page: 4.自定义DOM事件
+page: 409 4.自定义DOM事件
 
-page: 13.6.2 IE中的事件模拟(ie8)
+page: 410 13.6.2 IE中的事件模拟(ie8)
