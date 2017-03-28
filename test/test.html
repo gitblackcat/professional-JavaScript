@@ -5,15 +5,16 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="javascript:alert('Form submitted!')">
-        <input type="text">
-        <input type="text">
-        <input type="submit" value="submit">
-    </form>
+    <input type="text">
 
     <script>
-        document.forms[0].onsubmit = function(event){
-            console.log(event.target)
+        var input = document.querySelector('input')
+
+        input.onkeypress = function(event){
+            var charCode = event.charCode
+            if (!/\d/.test(String.fromCharCode(charCode)) && charCode > 9){
+                event.preventDefault()
+            }
         }
     </script>
 </body>
