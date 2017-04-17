@@ -11,10 +11,11 @@
         <option>333</option>
     </select>
 
-    <script>
-        var select = document.querySelector('select')
+    <p designMode="on">123</p>
 
-        console.log(select.options[2].value)        
+    <script>
+        var newOption = new Option('text','value')      
+        document.querySelector('select').add(newOption,undefined)
     </script>
 </body>
 </html>
