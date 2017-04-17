@@ -5,17 +5,16 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text">
+    <select name="sss">
+        <option value="yzd1">111</option>
+        <option value="">222</option>
+        <option>333</option>
+    </select>
 
     <script>
-        var input = document.querySelector('input')
+        var select = document.querySelector('select')
 
-        input.onkeypress = function(event){
-            var charCode = event.charCode
-            if (!/\d/.test(String.fromCharCode(charCode)) && charCode > 9){
-                event.preventDefault()
-            }
-        }
+        console.log(select.options[2].value)        
     </script>
 </body>
 </html>
