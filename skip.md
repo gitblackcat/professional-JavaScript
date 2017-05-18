@@ -81,3 +81,7 @@ page: 436 14.4表单序列化
 page: 438 14.5富文本编辑
 
 第15整章
+
+page: 484 16.2.4 dropEffect与effectAllowed
+
+page: 485 16.2.6 其他成员
