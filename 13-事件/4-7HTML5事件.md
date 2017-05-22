@@ -109,6 +109,8 @@ pageshow事件的event对象还包含一个名为`persisted`的布尔值属性.�
 ####hashchange事件
 HTML5新增了`hashchange`事件,以便在URL的参数列表(即URL中`#`号后面的所有字符串)发生变化时通知开发人员.之所以新增该事件,是因为在Ajax应用中,开发人员经常要利用URL参数列表来保存状态或导航信息.
 
+hash即URL中**_`#`字符后面的部分_**.使用浏览器访问网页时,如果网页URL中带有hash,页面就会定位到id（或name）与hash值一样的元素的位置,故而又称之为`锚点 `.hash还有另一个特点,它的改变不会导致页面重新加载
+
 **_必须把hashchange事件处理程序添加到window对象上_**,然后URL参数列表只要变化就会调用它.此时的event对象包含额外两个属性: `oldURL`和`newURL`.这两个属性分别保存着参数列表变化前后的完整URL
 
 支持hashchange事件的浏览器有IE8+,Firefox3.6+,Safari5+,Chrome和Opera10.6+
