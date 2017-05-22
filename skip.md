@@ -80,10 +80,17 @@ page: 436 14.4表单序列化
 
 page: 438 14.5富文本编辑
 
-第15整章
+第15整章(使用Canvas)绘图
 
 page: 484 16.2.4 dropEffect与effectAllowed
 
 page: 485 16.2.6 其他成员
 
 page: 486 16.3 媒体元素(待看)
+
+page: 505---520
+
+第18整章(JavaScript与XML)
+
+第19整章(E4X)
+
