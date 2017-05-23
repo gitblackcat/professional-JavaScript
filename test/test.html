@@ -8,9 +8,26 @@
 
 <body>
     <script type="text/javascript">
-    // console.log(123)
-    throw new Error("123")
-    alert(456)
+    function ajax(url, method) {
+        var xhr = new XMLHttpRequest()
+        xhr.onreadystatechange = function() {
+            console.log('xhr.readyState:' + this.readyState)
+        }
+        xhr.onloadstart = function() {
+            console.log('onloadStart')
+        }
+        xhr.onload = function() {
+            console.log('onload')
+        }
+        xhr.open(method, url, true)
+        xhr.setRequestHeader('Cache-Control', 3600)
+        xhr.send()
+    }
+    var timer = setTimeout(function() {
+        console.log('setTimeout')
+    }, 0)
+    ajax('http://www.easy-mock.com/mock/590089cf875d7232a38b20d9/example/num', 'GET')
+    console.warn('这里的log并不是最先打印出来的.')
     </script>
 </body>
 
