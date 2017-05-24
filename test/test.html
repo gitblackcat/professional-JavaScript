@@ -10,18 +10,36 @@
     <script type="text/javascript">
     function ajax(url, method) {
         var xhr = new XMLHttpRequest()
+            // xhr.onreadystatechange = function() {
+            //     console.log('xhr.readyState:' + this.readyState)
+            // }
+            // xhr.onloadstart = function(e) {
+            //     console.log(e)
+            // }
+            // xhr.onload = function() {
+            //     console.log(xhr.responseText)
+            // }
+            // xhr.onprogress = function(e) {
+            //     console.log('progress:', e.loaded / e.total)
+            //     console.log(xhr.readyState)
+            // }
+
+        // xhr.onload = function() {
+        //     console.log(xhr.responseText)
+        //     console.log(xhr.responseType)
+        //     console.log(xhr.responseURL)
+        // }
         xhr.onreadystatechange = function() {
-            console.log('xhr.readyState:' + this.readyState)
-        }
-        xhr.onloadstart = function() {
-            console.log('onloadStart')
-        }
-        xhr.onload = function() {
-            console.log('onload')
+            console.log(xhr.readyState)
+            console.log(xhr.getResponseHeader('Cache-Control'))
+            if (this.readyState == this.HEADERS_RECEIVED) {
+                console.log(this.getAllResponseHeaders());
+            }
         }
         xhr.open(method, url, true)
-        xhr.setRequestHeader('Cache-Control', 3600)
+        xhr.setRequestHeader("Content-type", "application/json")
         xhr.send()
+        xhr.abort()
     }
     var timer = setTimeout(function() {
         console.log('setTimeout')
