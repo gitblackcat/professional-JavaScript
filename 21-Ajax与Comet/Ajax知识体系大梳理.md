@@ -340,3 +340,5 @@ xdr具有如下属性:
 
 - XDomainRequest 不支持跨域传输cookie.
 - 只能设置请求头的Content-Type字段, 且不能访问响应头信息.
+
+####ajax跨域请求
