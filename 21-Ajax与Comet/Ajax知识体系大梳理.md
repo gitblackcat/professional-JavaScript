@@ -1,5 +1,5 @@
 ###Ajax知识体系大梳理
-转自[http://louiszhai.github.io/2016/11/02/ajax](http://louiszhai.github.io/2016/11/02/ajax)
+转自[http://louiszhai.github.io/2016/11/02/ajax/](http://louiszhai.github.io/2016/11/02/ajax/)
 
 `Ajax` 全称 `Asynchronous JavaScript and XML`, 即异步JS与XML. 它最早在IE5中被使用, 然后由Mozilla, Apple, Google推广开来. 典型的代表应用有 Outlook Web Access, 以及 GMail. 现代网页中几乎无ajax不欢. 前后端分离也正是建立在ajax异步通信的基础之上
 
@@ -419,3 +419,10 @@ CORS是一个W3C(World Wide Web)标准, 全称是跨域资源共享(Cross-origin
 以上请求流程图为:
 
 ![CROS-FLOW](img/CROS-FLOW.JPG)
+
+#####HTML启用CORS
+http-equiv 相当于http的响应头, 它回应给浏览器一些有用的信息,以帮助正确和精确地显示网页内容. 如下html将允许任意域名下的网页跨域访问.
+
+`<meta http-equiv="Access-Control-Allow-Origin" content="*">`
+
+#####ajax文件上传
