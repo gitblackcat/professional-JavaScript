@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    <a href="test2.html">test2.html</a>
     <script type="text/javascript">
     function ajax(url, method) {
         var xhr = new XMLHttpRequest()
@@ -31,12 +32,8 @@
         // }
         xhr.onreadystatechange = function() {
             console.log(xhr.readyState)
-            console.log(xhr.getResponseHeader('Cache-Control'))
-            if (this.readyState == this.HEADERS_RECEIVED) {
-                console.log(this.getAllResponseHeaders());
-            }
         }
-        xhr.open(method, url, true)
+        xhr.open(method, url, false)
         xhr.setRequestHeader("Content-type", "application/json")
         xhr.send()
         xhr.abort()

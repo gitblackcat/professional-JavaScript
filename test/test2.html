@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Page-Enter" content="revealTrans(duration=1.0,transtion=9)">
+    <meta http-equiv="Page-Exit" content="revealTrans(duration=1.0,transtion=9)">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="myForm" action="" method="post">
+        <input type="text" name="name">名字
+        <input type="password" name="psw">密码
+        <input type="submit" value="提交">
+    </form>
+    <script>
+    var form = document.getElementById("myForm");
+    // 用表单来初始化
+    var formData = new FormData(form);
+    // 我们可以根据name来访问表单中的字段
+    var name = formData.get("name"); // 获取名字
+    var psw = formData.get("psw"); // 获取密码
+    // 当然也可以在此基础上，添加其他数据
+    formData.append("token", "kshdfiwi3rh");
+    </script>
+</body>
+
+</html>
