@@ -67,6 +67,19 @@ formData.get("k1"); // "v1"
 formData.getAll("k1"); // ["v1","v2","v1"]
 ```
 
+`append()`还可以接收第三个参数,当使用append() 方法的时候，可能会使用到第三个参数去发送文件名称（通过Content-Disposition头发送到服务器）。如果没有指定第三个参数或这个参数不被支持的话，第三个参数默认是”blob”
+
+```javascript
+var fileInput = document.querySelector('input[type="file"]')
+var files = fileInput.files
+var formData = new FormData()
+
+for(var i = 0; i < files.length; i++) {
+    var file = files[i]
+    formData.append('files[]', file, file.name)
+}
+```
+
 #####修改数据
 我们可以通过set(key, value)来设置修改数据，如果指定的key不存在则会新增一条，如果存在，则会修改对应的value值(**_不管原先有几条value值,都会被覆盖掉_**)
 

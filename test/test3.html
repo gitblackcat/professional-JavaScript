@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" multiple>
+    <div class="display-img"></div>
+    <script>
+    var input = document.querySelector('input'),
+        oDiv = document.querySelector('.display-img')
+
+    input.onchange = function() {
+        var str = '',
+            reader = new FileReader()
+
+        reader.onload = function() {
+            oDiv.innerHTML = '<img style="width: 100px;height: 100px;" src="' + reader.result + '">'
+        }
+        reader.readAsDataURL(input.files[0])
+    }
+    </script>
+</body>
+
+</html>

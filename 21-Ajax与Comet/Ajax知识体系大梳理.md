@@ -128,7 +128,7 @@ xhr.onreadystatechange = function(e){
 - `total`: 表示资源总大小, 如果使用http下载资源, 它仅仅表示内容的总大小, 而不包括http headers等, 它同样是一个无符号长整型, 初始值为0
 
 #####onprogress
-`onprogress`事件回调方法在 `readyState==3` 状态时开始触发, 默认传入 `ProgressEvent` 对象, 可通过 `e.loaded/e.total` 来计算加载资源的进度, 该方法用于获取资源的下载进度
+`onprogress`事件回调方法在 `readyState==3` 状态时开始触发, 默认传入 `ProgressEvent` 对象, 可通过 `e.loaded/e.total` 来计算`加载资源`的进度, 该方法用于获取资源的`下载进度`
 
 **_注意: 该方法适用于 IE10+ 及其他现代浏览器_**
 
@@ -424,5 +424,3 @@ CORS是一个W3C(World Wide Web)标准, 全称是跨域资源共享(Cross-origin
 http-equiv 相当于http的响应头, 它回应给浏览器一些有用的信息,以帮助正确和精确地显示网页内容. 如下html将允许任意域名下的网页跨域访问.
 
 `<meta http-equiv="Access-Control-Allow-Origin" content="*">`
-
-#####ajax文件上传
