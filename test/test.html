@@ -7,42 +7,18 @@
 </head>
 
 <body>
-    <a href="test2.html">test2.html</a>
-    <script type="text/javascript">
-    function ajax(url, method) {
-        var xhr = new XMLHttpRequest()
-            // xhr.onreadystatechange = function() {
-            //     console.log('xhr.readyState:' + this.readyState)
-            // }
-            // xhr.onloadstart = function(e) {
-            //     console.log(e)
-            // }
-            // xhr.onload = function() {
-            //     console.log(xhr.responseText)
-            // }
-            // xhr.onprogress = function(e) {
-            //     console.log('progress:', e.loaded / e.total)
-            //     console.log(xhr.readyState)
-            // }
-
-        // xhr.onload = function() {
-        //     console.log(xhr.responseText)
-        //     console.log(xhr.responseType)
-        //     console.log(xhr.responseURL)
-        // }
-        xhr.onreadystatechange = function() {
-            console.log(xhr.readyState)
-        }
-        xhr.open(method, url, false)
-        xhr.setRequestHeader("Content-type", "application/json")
-        xhr.send()
-        xhr.abort()
+    <a href="https://github.com/">github</a>
+    <script>
+    document.querySelector('a').onclick = function() {
+        loading()
+        window.location.href = this.href
     }
-    var timer = setTimeout(function() {
-        console.log('setTimeout')
-    }, 0)
-    ajax('http://www.easy-mock.com/mock/590089cf875d7232a38b20d9/example/num', 'GET')
-    console.warn('这里的log并不是最先打印出来的.')
+
+    function loading() {
+        var oDiv = document.createElement('div')
+        oDiv.innerHTML = '页面跳转中'
+        document.body.append(oDiv)
+    }
     </script>
 </body>
 
