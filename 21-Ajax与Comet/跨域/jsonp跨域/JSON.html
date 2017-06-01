@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		// JSON：一种基于文本的数据交换方式，或者叫做数据描述格式
+
+		/*JSON的优点:
+			1、基于纯文本，跨平台传递极其简单;
+			2、JavaScript原生支持，后台语言几乎全部支持;
+			3、轻量级数据格式，占用字符数量极少，特别适合互联网传递;
+			4、可读性较强，虽然比不上XML那么一目了然，但在合理的依次缩进之后还是很容易识别的;
+			5、容易编写和解析，当然前提是你要知道数据结构;
+		*/
+
+		/*JSON的格式
+			1、JSON只有两种数据类型描述符，大括号{}和方括号[]，其余英文冒号:是映射符/英文逗号,是分隔符/英文双引号""是定义符。
+			2、大括号{}用来描述一组“不同类型的无序键值对集合”（每个键值对可以理解为OOP的属性描述），方括号[]用来描述一组“相同类型的有序数据集合”（可对应OOP的数组）。
+			3、上述两种集合中若有多个子项，则通过英文逗号,进行分隔。
+			4、键值对以英文冒号:进行分隔，并且建议键名都加上英文双引号""，以便于不同语言的解析。
+			5、JSON内部常用数据类型无非就是字符串、数字、布尔、日期、null 这么几个，字符串必须用双引号引起来，其余的都不用，日期类型比较特殊，这里就不展开讲述了，只是建议如果客户端没有按日期排序功能需求的话，那么把日期时间直接作为字符串传递就好，可以省去很多麻烦。
+		*/
+
+		// 描述一个人
+
+		var person = {
+		    "Name": "Bob",
+		    "Age": 32,
+		    "Company": "IBM",
+		    "Engineer": true
+		}
+
+		// 获取这个人的信息
+
+		var personAge = person.Age;
+
+		// 描述几个人
+
+		var members = [
+		    {
+		        "Name": "Bob",
+		        "Age": 32,
+		        "Company": "IBM",
+		        "Engineer": true
+		    },
+		    {
+		        "Name": "John",
+		        "Age": 20,
+		        "Company": "Oracle",
+		        "Engineer": false
+		    },
+		    {
+		        "Name": "Henry",
+		        "Age": 45,
+		        "Company": "Microsoft",
+		        "Engineer": false
+		    }
+		]
+
+		// 读取其中John的公司名称
+
+		var johnsCompany = members[1].Company;
+
+		// 描述一次会议
+
+		var conference = {
+		    "Conference": "Future Marketing",
+		    "Date": "2012-6-1",
+		    "Address": "Beijing",
+		    "Members": 
+		    [
+		        {
+		            "Name": "Bob",
+		            "Age": 32,
+		            "Company": "IBM",
+		            "Engineer": true
+		        },
+		        {
+		            "Name": "John",
+		            "Age": 20,
+		            "Company": "Oracle",
+		            "Engineer": false
+		        },
+		        {
+		            "Name": "Henry",
+		            "Age": 45,
+		            "Company": "Microsoft",
+		            "Engineer": false
+		        }
+		    ]
+		}
+
+		// 读取参会者Henry是否工程师
+
+		var henryIsAnEngineer = conference.Members[2].Engineer;
+	</script>
+
+</body>
+</html>

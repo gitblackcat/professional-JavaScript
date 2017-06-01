@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function test(str){
+			alert( 'Hello ' + str );
+		}
+	</script>
+	<script type="text/javascript" src="file:///E:/test/test.js"></script>
+	<!-- 假设在本地E盘有一个test文件夹 里面有一个test.js文件 test.js文件里面内容如下 这是模仿服务端生成的js文件 -->
+	<!-- test('JSONP') 这是模仿服务端的js文件调用本地函数 并传值在其中  -->
+	<!-- 那么在打开jsonp1.html(本页面)的时候 其实就是客户端 就会弹出弹框'Hello JSONP' -->
+	<!-- 但是 有一个问题出现了 怎么让服务端得知需要调用的是客户端的哪个函数呢 请看jsonp2.html -->
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	    // 得到航班信息查询结果后的回调函数
+	    // 模拟客户端得到服务端信息后的函数
+	    var flightHandler = function(data){
+	        alert('你查询的航班结果是：票价 ' + data.price + ' 元，' + '余票 ' + data.tickets + ' 张。');
+	    };
+	    // 提供jsonp服务的url地址（不管是什么类型的地址，最终生成的返回值都是一段javascript代码）
+	    // 这里code的作用是告诉服务端,要查的航班班次 callback的值是告诉服务端 该调用的客户端函数名
+	    var url = "file:///E:/flightHandler/flightHandler.js?code=CA1998&callback=flightHandler";
+	    // 创建script标签，设置其属性
+	    var script = document.createElement('script');
+	    script.setAttribute('src', url);
+	    // 把script标签加入head，此时调用开始
+	    document.getElementsByTagName('head')[0].appendChild(script); 
+	</script>
+	<!-- 在服务端,具体怎么拼接url中的字符串是后台的事情 暂时不考虑 -->
+	<!-- 然后在后台有个flihtHandler文件夹 其中有个flightHandler.js文件 里面的内容大体如下 -->
+	<!-- 
+		flightHandler({
+			"code": "CA1998",
+			"price": 2016,
+			"tickets": 5
+		})
+	 -->
+	 <!-- 然后客户端页面(json2.html)打开后会弹出 如下 -->
+	 <!-- 你查询的航班结果是: 票价 2016 元,余票 5 张 -->
+	 <!-- 如果是jquery中怎么调用jsonp? 请看jsonp3.html -->
+</head>
+<body>
+	
+</body>
+</html>
