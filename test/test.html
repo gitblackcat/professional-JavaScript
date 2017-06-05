@@ -4,21 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+    a {
+        margin-bottom: 2000px;
+        display: block;
+    }
+    
+    div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin-bottom: 2000px;
+    }
+    </style>
 </head>
 
 <body>
-    <a href="https://github.com/">github</a>
+    <a>按钮2</a>
+    <div id="showscroll"></div>
     <script>
-    document.querySelector('a').onclick = function() {
-        loading()
-        window.location.href = this.href
+    function Fn(name, age) {
+        this.name = name
+        this.age = age
     }
 
-    function loading() {
-        var oDiv = document.createElement('div')
-        oDiv.innerHTML = '页面跳转中'
-        document.body.append(oDiv)
+    var o = new Fn('yzd', 24)
+
+    var J = {
+        "name": "yzd",
+        "age": 24
     }
+
+    console.log(Object.prototype.toString.call(JSON))
     </script>
 </body>
 
