@@ -4,38 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <style>
-    a {
-        margin-bottom: 2000px;
-        display: block;
-    }
-    
-    div {
-        width: 100px;
-        height: 100px;
-        background: red;
-        margin-bottom: 2000px;
-    }
-    </style>
 </head>
 
 <body>
-    <a>按钮2</a>
-    <div id="showscroll"></div>
     <script>
-    function Fn(name, age) {
-        this.name = name
-        this.age = age
-    }
-
-    var o = new Fn('yzd', 24)
-
-    var J = {
-        "name": "yzd",
-        "age": 24
-    }
-
-    console.log(Object.prototype.toString.call(JSON))
+    var flag = confirm("Are you sure?")
+    console.log(flag)
     </script>
 </body>
 

@@ -11,7 +11,7 @@
     <script type="text/javascript">
     function bind(fn, context) {
         return function() {
-            fn.apply(context, arguments);
+            return fn.apply(context, arguments);
         };
     }
 
@@ -24,7 +24,7 @@
     };
 
     var btn = document.getElementById("my-btn");
-    // EventUtil.addHandler(btn, "click", bind(handler.handleClick, handler));
+    EventUtil.addHandler(btn, "click", bind(handler.handleClick, handler));
 
     // btn.addEventListener("click", bind(handler.handleClick, handler), false)
     btn.addEventListener("click", function() {
