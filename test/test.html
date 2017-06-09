@@ -8,16 +8,19 @@
 
 <body>
     <script>
-    var person = {
-        name: "yzd"
+    setTimeout(function(diff) {
+        if (diff > 0) {
+            console.log('晚调用')
+        } else if (diff < 0) {
+            console.log('早调用')
+        } else {
+            console.log('及时调用')
+        }
+    }, 300)
+    document.body.style.backgroundColor = 'red'
+    for (var i = 0; i < 10000; i++) {
+        console.log(1)
     }
-
-    // Object.preventExtensions(person)
-    Object.seal(person)
-    person.age = 25
-    console.log(person.age)
-    person.name = "aaa"
-    console.log(person.name)
     </script>
 </body>
 
