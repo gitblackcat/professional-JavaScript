@@ -8,8 +8,16 @@
 
 <body>
     <script>
-    var flag = confirm("Are you sure?")
-    console.log(flag)
+    var person = {
+        name: "yzd"
+    }
+
+    // Object.preventExtensions(person)
+    Object.seal(person)
+    person.age = 25
+    console.log(person.age)
+    person.name = "aaa"
+    console.log(person.name)
     </script>
 </body>
 
