@@ -8,30 +8,12 @@
 
 <body>
     <script>
-    function bind(fn, context) {
-        return function() {
-            return fn.apply(context, arguments);
+    for (var i = 1; i <= 10; i++) {
+        if (i == 8) {
+            return
         }
+        document.write(i)
     }
-
-    function bindNoReturn(fn, context) {
-        return function() {
-            fn.apply(context, arguments);
-        }
-    }
-    var name = 'global';
-
-    function fn() {
-        return this.name;
-    }
-    var bfn = bind(fn, {
-        name: "sf"
-    });
-    var bfnNR = bindNoReturn(fn, {
-        name: 'return'
-    });
-    console.log(bfn());
-    console.log(bfnNR());
     </script>
 </body>
 

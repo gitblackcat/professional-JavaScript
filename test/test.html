@@ -4,22 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+    div {
+        background: red;
+    }
+    </style>
 </head>
 
 <body>
+    <div id="myDiv"></div>
     <script>
-    setTimeout(function(diff) {
-        if (diff > 0) {
-            console.log('晚调用')
-        } else if (diff < 0) {
-            console.log('早调用')
-        } else {
-            console.log('及时调用')
+    function EventTarget() {
+        this.handlers = {}
+    }
+
+    EventTarget.prototype = {
+        constructor: EventTarget,
+        addHandler: function(type, handler) {
+            if (typeof this.handlers[type] === 'undefined') {
+                this.handlers[type] = []
+            }
+            this.handlers[type].push(handler)
+        },
+        fire: function(event) {
+            if (!event.target) {
+                event.target = this
+            }
+            if (this.handlers[event.type] instanceof Array) {
+                var handlers = this.handlers[event.type]
+                for (var i = 0, len = handlers.length; i < len; i++) {
+                    handlers[i](event)
+                }
+            }
+        },
+        removeHandler: function(type, handler) {
+            if (this.handlers[type] instanceof Array) {
+                var handlers = this.handlers[type]
+                for (var i = 0, len = handlers[type].length; i++) {
+                    if (handlers[i] === handler) {
+                        handlers.splice(i, 1)
+                        break
+                    }
+                }
+            }
         }
-    }, 300)
-    document.body.style.backgroundColor = 'red'
-    for (var i = 0; i < 10000; i++) {
-        console.log(1)
     }
     </script>
 </body>
