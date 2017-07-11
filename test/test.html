@@ -3,52 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <title>Document</title>
-    <style>
-    div {
-        background: red;
-    }
-    </style>
 </head>
 
 <body>
-    <div id="myDiv"></div>
     <script>
-    function EventTarget() {
-        this.handlers = {}
+    if (navigator.onLine) {
+
+        alert(window.navigator.onLine)
+    } else {
+        alert(123)
     }
 
-    EventTarget.prototype = {
-        constructor: EventTarget,
-        addHandler: function(type, handler) {
-            if (typeof this.handlers[type] === 'undefined') {
-                this.handlers[type] = []
-            }
-            this.handlers[type].push(handler)
-        },
-        fire: function(event) {
-            if (!event.target) {
-                event.target = this
-            }
-            if (this.handlers[event.type] instanceof Array) {
-                var handlers = this.handlers[event.type]
-                for (var i = 0, len = handlers.length; i < len; i++) {
-                    handlers[i](event)
-                }
-            }
-        },
-        removeHandler: function(type, handler) {
-            if (this.handlers[type] instanceof Array) {
-                var handlers = this.handlers[type]
-                for (var i = 0, len = handlers[type].length; i++) {
-                    if (handlers[i] === handler) {
-                        handlers.splice(i, 1)
-                        break
-                    }
-                }
-            }
-        }
-    }
+    window.addEventListener('online', function() {
+        alert("online")
+    }, false)
     </script>
 </body>
 
