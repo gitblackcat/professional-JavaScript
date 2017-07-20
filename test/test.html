@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <title>Document</title>
 </head>
-
 <body>
+    <button type="button">click</button>
     <script>
-    if (navigator.onLine) {
-
-        alert(window.navigator.onLine)
-    } else {
-        alert(123)
-    }
-
-    window.addEventListener('online', function() {
-        alert("online")
-    }, false)
+        sessionStorage.name = 'yzd'
+        document.querySelector('button').onclick = function(){
+            // console.log(sessionStorage.name)
+            delete sessionStorage.name
+        }
+        document.addEventListener('storage',function(){
+            alert(1)
+        },false)
     </script>
 </body>
-
 </html>
