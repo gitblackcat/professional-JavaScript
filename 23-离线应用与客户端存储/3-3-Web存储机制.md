@@ -40,3 +40,10 @@ sessionStorage 是个全局对象,它维护着在页面会话(page session)期�
 
 理论上很美好,不过在各大浏览器基本没被实现
 
+####限制
+Web Storage的存储空间是有限制的,具体因浏览器而异.一般来说,对存储空间大小的限制都是以每个来源(协议,域和端口)为单位的.换句话说,每个来源都有固定大小的空间用于保存自己的数据.
+
+对于localStorage,大多数桌面浏览器会设置每个来源5MB的限制.Chrome和Safari对每个来源的限制是2.5MB.iOS版Safari和Android版WebKit的限制也是2.5MB
+
+对sessionStorage的限制也是因浏览器而异的.有的没有大小限制,但Chrome,Safari,iOS版Safari和Android版的WebKit都有限制为2.5MB.IE8+和Opera的限制为5MB
+
