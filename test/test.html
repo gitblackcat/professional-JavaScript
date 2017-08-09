@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+
 <body>
-    <button type="button">click</button>
+    <ul id="myList"></ul>
     <script>
-        sessionStorage.name = 'yzd'
-        document.querySelector('button').onclick = function(){
-            // console.log(sessionStorage.name)
-            delete sessionStorage.name
-        }
-        document.addEventListener('storage',function(){
-            alert(1)
-        },false)
+    var list = document.getElementById('myList'),
+        item,
+        i
+
+    for (i = 9; i >= 0; i--) {
+        item = document.createElement('li')
+        item.appendChild(document.createTextNode('Item ' + (9 - i)))
+        list.appendChild(item)
+    }
     </script>
 </body>
+
 </html>
