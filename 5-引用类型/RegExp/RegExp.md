@@ -158,7 +158,7 @@ console.log( textNew1 );//+1bb+++5
 
 //负向匹配
 var text2 = 'a1bbc345'; 
-var re = /\w(?!\d)/g;
+var re = /\w(?!\d)/g;//这里我想匹配一个字母或数字或_,但是必须是后面跟着的不是数字,(?!\d)只是一个断言,我们需要的也只是\w
 var textNew2 = text2.replace(re,'-');
 console.log( textNew2 );//a---c34- 注意正则会匹配到最后一个字符,所以5变成-了
 ```
